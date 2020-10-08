@@ -19,10 +19,15 @@ public class FoodDetailsTableOperations {
     public long insertFoodData(FoodDetailsModel foodData) {
         SQLiteDatabase dbb = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_NAME, foodData.name);
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_CALORIES, foodData.calories);
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_CARBOHYDRATES, foodData.carbohydrates);
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_PROTEINS, foodData.proteins);
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_FAT, foodData.fat);
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_WEIGHT, foodData.weight);
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_CUP, foodData.cup);
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_DISH, foodData.dish);
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_SPOON, foodData.spoon);
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_FOOD_ID, foodData.food_id);
         return dbb.insert(FoodDetailsTable.TABLE_NAME, null, contentValues);
     }
@@ -30,18 +35,27 @@ public class FoodDetailsTableOperations {
 
     public FoodDetailsModel getFoodData() {
         SQLiteDatabase db = helper.getWritableDatabase();
-        String[] columns = {FoodDetailsTable.FOOD_DETAILS_ID, FoodDetailsTable.FOOD_DETAILS_CALORIES,
+        String[] columns = {FoodDetailsTable.FOOD_DETAILS_ID, FoodDetailsTable.FOOD_DETAILS_NAME, FoodDetailsTable.FOOD_DETAILS_CALORIES,
                 FoodDetailsTable.FOOD_DETAILS_CARBOHYDRATES, FoodDetailsTable.FOOD_DETAILS_PROTEINS,
-                FoodDetailsTable.FOOD_DETAILS_FAT, FoodDetailsTable.FOOD_DETAILS_FOOD_ID};
+                FoodDetailsTable.FOOD_DETAILS_FAT, FoodDetailsTable.FOOD_DETAILS_WEIGHT,
+                FoodDetailsTable.FOOD_DETAILS_CUP, FoodDetailsTable.FOOD_DETAILS_DISH,
+                FoodDetailsTable.FOOD_DETAILS_SPOON, FoodDetailsTable.FOOD_DETAILS_FOOD_ID};
         Cursor cursor = db.query(FoodDetailsTable.TABLE_NAME, columns, null, null, null, null, null);
         FoodDetailsModel foodDetailsModel = new FoodDetailsModel();
 
         while (cursor.moveToNext()) {
             foodDetailsModel.id = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_ID));
+            foodDetailsModel.name = cursor.getString(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_NAME));
             foodDetailsModel.calories = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_CALORIES));
             foodDetailsModel.carbohydrates = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_CARBOHYDRATES));
-            foodDetailsModel.fat = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_FAT));
             foodDetailsModel.proteins = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_PROTEINS));
+            foodDetailsModel.fat = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_FAT));
+
+            foodDetailsModel.weight = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_WEIGHT));
+            foodDetailsModel.cup = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_CUP));
+            foodDetailsModel.dish = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_DISH));
+            foodDetailsModel.spoon = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_SPOON));
+
             foodDetailsModel.food_id = cursor.getInt(cursor.getColumnIndex(FoodDetailsTable.FOOD_DETAILS_FOOD_ID));
         }
         return foodDetailsModel;
@@ -58,9 +72,15 @@ public class FoodDetailsTableOperations {
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_CALORIES, foodData.calories);
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_NAME, foodData.name);
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_CARBOHYDRATES, foodData.carbohydrates);
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_PROTEINS, foodData.proteins);
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_FAT, foodData.fat);
+
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_WEIGHT, foodData.weight);
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_CUP, foodData.cup);
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_DISH, foodData.dish);
+        contentValues.put(FoodDetailsTable.FOOD_DETAILS_SPOON, foodData.spoon);
         contentValues.put(FoodDetailsTable.FOOD_DETAILS_FOOD_ID, foodData.food_id);
         String[] whereArgs = {foodData.id + ""};
         return db.update(FoodDetailsTable.TABLE_NAME, contentValues, FoodDetailsTable.FOOD_DETAILS_ID + " = ?", whereArgs);
