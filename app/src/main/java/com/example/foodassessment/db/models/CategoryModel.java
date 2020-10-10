@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.foodassessment.db.models;
 
 import java.util.Arrays;
@@ -51,3 +52,13 @@ public class CategoryModel {
         this.image = image;
     }
 }
+||||||| merged common ancestors
+=======
+package com.example.foodassessment.db.models;
+
+public class CategoryModel {
+    public int id;
+    public String name;
+    public byte[] image;
+}
+>>>>>>> 629f5325b5ab53120a0a87841e66834425bc530c
