@@ -8,7 +8,7 @@ public class UserTable {
     public static final String USER_HEIGHT = "user_height";
     public static final String USER_WEIGHT = "user_weight";
     public static final String CREATE_STATEMENT = "CREATE TABLE " + TABLE_NAME +
-            " (" + USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + USER_GENDER + " INTEGER, " + USER_AGE + " INTEGER , " +
-            USER_HEIGHT + " INTEGER , " + USER_WEIGHT + " DOUBLE );";
+            " (" + USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + USER_GENDER + " VARCHAR(25), " + USER_AGE + " INTEGER , " +
+            USER_HEIGHT + " DOUBLE , " + USER_WEIGHT + " DOUBLE );";
     public static final String DROP_STATEMENT = "DROP TABLE IF EXISTS " + TABLE_NAME;
 }

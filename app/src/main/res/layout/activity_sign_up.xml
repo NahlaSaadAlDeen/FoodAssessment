@@ -103,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="العمر"
+                android:inputType="number"
                 android:fontFamily="@font/cairo"
                 android:layout_marginTop="20dp"
                  />
@@ -114,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="الطول"
+                android:inputType="numberDecimal"
                 android:fontFamily="@font/cairo"
                 android:layout_marginTop="20dp"/>
 
@@ -124,6 +126,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="الوزن"
+                android:inputType="numberDecimal"
                 android:fontFamily="@font/cairo"
                 android:layout_marginTop="20dp"/>
 
@@ -131,6 +134,7 @@
 
             <!-- for radio button gender -->
                 <RadioGroup
+                    android:id="@+id/radio_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -139,6 +143,7 @@
                     android:paddingTop="20dp">
 
                     <RadioButton
+                        android:id="@+id/radio_gender_male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/radiobtnmale"
@@ -147,6 +152,7 @@
                         android:textSize="20dp"/>
 
                     <RadioButton
+                        android:id="@+id/radio_gender_female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/cairo"

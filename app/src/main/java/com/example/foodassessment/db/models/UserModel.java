@@ -2,14 +2,14 @@ package com.example.foodassessment.db.models;
 
 public class UserModel {
     public int id;
-    public int gender;
+    public String gender;
     public int age;
     public double height;
     public double weight;
 
     //constructor
 
-    public UserModel(int id, int gender, int age, double height, double weight) {
+    public UserModel(int id, String gender, int age, double height, double weight) {
         this.id = id;
         this.gender = gender;
         this.age = age;
@@ -38,11 +38,11 @@ public class UserModel {
         this.id = id;
     }
 
-    public int getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

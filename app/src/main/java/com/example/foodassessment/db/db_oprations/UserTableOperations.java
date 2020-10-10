@@ -47,10 +47,10 @@ public class UserTableOperations {
         if (cursor.moveToFirst()) {
             do {
                 int userID = cursor.getInt(0);
-                int userGender = cursor.getInt(1);
+                String userGender = cursor.getString(1);
                 int userAge = cursor.getInt(2);
-                double userHeight = cursor.getInt(3);
-                double userWeight = cursor.getInt(4);
+                double userHeight = cursor.getDouble(3);
+                double userWeight = cursor.getDouble(4);
                 UserModel newUser = new UserModel(userID, userGender, userAge, userHeight, userWeight);
                 resultList.add(newUser);
             }
