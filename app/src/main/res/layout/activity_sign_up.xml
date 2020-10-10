@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--for whole activity -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center|center_vertical"
+            android:orientation="vertical">
+            <!-- for logo -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/logoname1"
+                    android:textColor="#121212"
+                    android:textSize="50dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+
+                <TextView
+                    android:id="@+id/brmvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/logoname2"
+                    android:textColor="#0069FF"
+                    android:textSize="40dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+            </LinearLayout>
+
+            <!-- for text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="20dp"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/text1"
+                    android:textColor="#707070"
+                    android:textSize="20dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/text2"
+                    android:textColor="#707070"
+                    android:textSize="20dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/text3"
+                    android:textColor="#707070"
+                    android:textSize="20dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+            </LinearLayout>
+
+            <!-- for inputs -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp">
+            <EditText
+                android:id="@+id/et_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="العمر"
+                android:fontFamily="@font/cairo"
+                android:layout_marginTop="20dp"
+                 />
+
+
+            <EditText
+                android:id="@+id/et_length"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="الطول"
+                android:fontFamily="@font/cairo"
+                android:layout_marginTop="20dp"/>
+
+
+            <EditText
+                android:id="@+id/et_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="الوزن"
+                android:fontFamily="@font/cairo"
+                android:layout_marginTop="20dp"/>
+
+            </LinearLayout>
+
+            <!-- for radio button gender -->
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right"
+                    android:paddingRight="20dp"
+                    android:paddingTop="20dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/radiobtnmale"
+                        android:fontFamily="@font/cairo"
+                        android:paddingLeft="30dp"
+                        android:textSize="20dp"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo"
+                        android:text="@string/radiobtnfemale"
+                        android:textSize="20dp"/>
+
+                </RadioGroup>
+
+            <!-- for BRM -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:gravity="right">
+
+
+
+                <TextView
+                    android:id="@+id/brm_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/brmname"
+                    android:textColor="#121212"
+                    android:textSize="20dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+
+                <TextView
+                    android:id="@+id/brm_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/brmvalue"
+                    android:textColor="#089B0D"
+                    android:textSize="20dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+            </LinearLayout>
+
+            <!-- for sign up button -->
+            <Button
+                android:id="@+id/help_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="#0069FF"
+                android:fontFamily="@font/cairo"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:text="@string/sign_up_btn"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                app:strokeColor="#2196F3" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

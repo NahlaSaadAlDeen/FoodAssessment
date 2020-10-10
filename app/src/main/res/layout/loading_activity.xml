@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loadingActivity"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center|center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairobold"
+                android:text="@string/logoname1"
+                android:textColor="#121212"
+                android:textSize="50dp"
+                app:autoSizeMaxTextSize="150px"
+                app:autoSizeMinTextSize="70px" />
+
+            <TextView
+                android:id="@+id/brmvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairobold"
+                android:text="@string/logoname2"
+                android:textColor="#0069FF"
+                android:textSize="40dp"
+                app:autoSizeMaxTextSize="150px"
+                app:autoSizeMinTextSize="70px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/loading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo"
+                android:text="@string/loading_text"
+                android:textColor="#928F8F"
+                android:textSize="20dp"
+                app:autoSizeMaxTextSize="150px"
+                app:autoSizeMinTextSize="70px" />
+
+            <TextView
+                android:id="@+id/loading_dots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo"
+                android:text="@string/loding_dots"
+                android:textColor="#928F8F"
+                android:textSize="20dp"
+                app:autoSizeMaxTextSize="150px"
+                app:autoSizeMinTextSize="70px" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/screenshot_11"
+        android:gravity="center">
+
+    </RelativeLayout>
+</RelativeLayout>

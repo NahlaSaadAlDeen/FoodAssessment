@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".FoodCollectionsActivity">
+
+    <!-- for whole activity -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|center_vertical"
+            android:padding="10dp">
+            <!-- for title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="الأصناف"
+                android:fontFamily="@font/cairo"
+                android:textColor="#121212"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                />
+            <!-- for container -->
+
+
+                <com.jcminarro.roundkornerlayout.RoundKornerFrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/food1"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    app:corner_radius="15dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:orientation="vertical"
+                        android:gravity="center|center_vertical"
+                        android:background="#8C000000">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="خبز"
+                            android:fontFamily="@font/cairobold"
+                            android:textColor="#fff"
+                            android:textSize="20dp"
+                            android:textAlignment="center"/>
+                    </LinearLayout>
+                </com.jcminarro.roundkornerlayout.RoundKornerFrameLayout>
+
+
+            <com.jcminarro.roundkornerlayout.RoundKornerFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/food2"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:corner_radius="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical"
+                    android:gravity="center|center_vertical"
+                    android:background="#8C000000">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="فواكه"
+                        android:fontFamily="@font/cairobold"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </com.jcminarro.roundkornerlayout.RoundKornerFrameLayout>
+
+
+            <com.jcminarro.roundkornerlayout.RoundKornerFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/food3"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:corner_radius="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical"
+                    android:gravity="center|center_vertical"
+                    android:background="#8C000000">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="الحلويات"
+                        android:fontFamily="@font/cairobold"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </com.jcminarro.roundkornerlayout.RoundKornerFrameLayout>
+
+
+            <com.jcminarro.roundkornerlayout.RoundKornerFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/food4"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:corner_radius="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical"
+                    android:gravity="center|center_vertical"
+                    android:background="#8C000000">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="الألبان"
+                        android:fontFamily="@font/cairobold"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </com.jcminarro.roundkornerlayout.RoundKornerFrameLayout>
+
+
+
+
+            <Button
+                        android:id="@+id/go_back_btn2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="#0069FF"
+                        android:fontFamily="@font/cairobold"
+                        android:text="@string/go_back"
+                        android:textColor="#fff"
+                        android:textSize="20dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

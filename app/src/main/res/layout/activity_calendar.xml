@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".CalendarActivity">
+
+    <!-- for whole activity -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|center_vertical">
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/startcalendar"/>
+
+            <!-- for choose food button -->
+            <Button
+                android:id="@+id/choose_food_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="#0069FF"
+                android:fontFamily="@font/cairo"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:text="@string/choose_food_btn"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                app:strokeColor="#2196F3" />
+
+            <!-- for Calc and Graphs button -->
+            <Button
+                android:id="@+id/graph_calc_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="#0069FF"
+                android:fontFamily="@font/cairo"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:text="@string/graph_calc_btn"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                app:strokeColor="#2196F3" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

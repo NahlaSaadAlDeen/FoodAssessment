@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartOrHelpActivity"
+    android:background="#fff">
+
+    <!-- for whole activity -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|center_vertical">
+            <!-- for logo -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/logoname1"
+                    android:textColor="#121212"
+                    android:textSize="50dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+
+                <TextView
+                    android:id="@+id/brmvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/logoname2"
+                    android:textColor="#0069FF"
+                    android:textSize="40dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+            </LinearLayout>
+
+        <!-- for text -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="20dp"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairobold"
+                android:text="@string/text21"
+                android:textColor="#707070"
+                android:textSize="20dp"
+                app:autoSizeMaxTextSize="150px"
+                app:autoSizeMinTextSize="70px" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairobold"
+                android:text="@string/text22"
+                android:textColor="#707070"
+                android:textSize="20dp"
+                app:autoSizeMaxTextSize="150px"
+                app:autoSizeMinTextSize="70px" />
+        </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:src="@drawable/startorhelp"/>
+
+            <!-- for BRM -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:gravity="right">
+
+
+
+                <TextView
+                    android:id="@+id/brm_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/brmstatustitle"
+                    android:textColor="#121212"
+                    android:textSize="20dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+
+                <TextView
+                    android:id="@+id/brm_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairobold"
+                    android:text="@string/brm_status"
+                    android:textColor="#f00"
+                    android:textSize="20dp"
+                    app:autoSizeMaxTextSize="150px"
+                    app:autoSizeMinTextSize="70px" />
+
+            </LinearLayout>
+
+            <!-- for start button -->
+            <Button
+                android:id="@+id/start_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="#0069FF"
+                android:fontFamily="@font/cairo"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:text="@string/start_btn"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                app:strokeColor="#2196F3" />
+
+            <!-- for help button -->
+            <Button
+                android:id="@+id/help_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="#0069FF"
+                android:fontFamily="@font/cairo"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:text="@string/help_btn"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                app:strokeColor="#2196F3" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
