@@ -26,7 +26,7 @@ public class FoodTableOperations {
         return dbb.insert(FoodTable.TABLE_NAME, null, contentValues);
     }
 
-
+/*
     public FoodModel getFoodData() {
         SQLiteDatabase db = helper.getWritableDatabase();
         String[] columns = {FoodTable.FOOD_ID, FoodTable.FOOD_NAME, FoodTable.FOOD_MAKING_METHOD,
@@ -50,7 +50,7 @@ public class FoodTableOperations {
 
         return db.delete(FoodTable.TABLE_NAME, FoodTable.FOOD_ID + " = ?", whereArgs);
     }
-
+*/
     public int updateFoodData(FoodModel foodData) {
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
