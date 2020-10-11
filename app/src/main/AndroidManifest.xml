@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".FoodActivity"></activity>
+        <activity android:name=".FoodActivity" />
         <activity android:name=".FoodCollectionsActivity" />
         <activity android:name=".AddFoodActivity" />
         <activity
@@ -22,7 +22,7 @@
         <activity
             android:name=".SignUpActivity"
             android:label="غذاؤنا" />
-        <activity android:name=".loadingActivity">
+        <activity android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

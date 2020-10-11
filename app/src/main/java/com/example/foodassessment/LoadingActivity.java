@@ -1,48 +1,64 @@
 package com.example.foodassessment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Handler;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.foodassessment.db.db_oprations.FoodDetailsTableOperations;
+import com.example.foodassessment.db.db_oprations.FoodTableOperations;
+import com.example.foodassessment.db.db_oprations.UserTableOperations;
 
 import java.util.Locale;
 
 public class LoadingActivity extends AppCompatActivity {
+    UserTableOperations userTableOperations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setLocale(this);
-        setContentView(R.layout.activity_loading);
+        setContentView(R.layout.loading_activity);
 
-        int SPLASH_TIME_OUT = 1000;
-        new Handler().postDelayed(new Runnable() {
 
-            @Override
-            public void run() {
-                // This method will be executed once the timer is over
-                // Start your app main activity
-                Intent i = new Intent(LoadingActivity.this, SignUpActivity.class);
-                startActivity(i);
-                // close this activity
-                finish();
-            }
-        }, SPLASH_TIME_OUT);
-
-    }
-
-    public static void setLocale(Activity context) {
-        Locale locale;
-
-        locale = new Locale("ar");
-        Configuration config = new Configuration(context.getResources().getConfiguration());
+        // change language of this activity
+        String languageToLoad = "ar";
+        Locale locale = new Locale(languageToLoad);
         Locale.setDefault(locale);
-        config.setLocale(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+        this.setContentView(R.layout.loading_activity);
+        userTableOperations = new UserTableOperations(this);
 
-        context.getBaseContext().getResources().updateConfiguration(config,
-                context.getBaseContext().getResources().getDisplayMetrics());
+
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        boolean isEmpty = new FoodDetailsTableOperations(LoadingActivity.this).getFoodData().isEmpty();
+
+                        int sizeFoodDetails = new FoodDetailsTableOperations(LoadingActivity.this).getFoodData().size();
+                        int sizeFood = new FoodTableOperations(LoadingActivity.this).getFoodData().size();
+
+                        if (!isEmpty) {
+                            Toast.makeText(LoadingActivity.this, "Data Already Inserted..." + sizeFoodDetails + ", " + sizeFood, Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Toast.makeText(LoadingActivity.this, "No Data Found ", Toast.LENGTH_SHORT).show();
+
+                        }
+                        // check if there's no user go to sign up activity, else go to start and help activity
+                        if (userTableOperations.getUserData().isEmpty()) {
+                            Intent intent = new Intent(LoadingActivity.this, SignUpActivity.class);
+                            startActivity(intent);
+                        } else {
+                            Intent intent = new Intent(LoadingActivity.this, StartOrHelpActivity.class);
+                            startActivity(intent);
+                        }
+                    }
+                }, 3000
+        );
     }
 }
