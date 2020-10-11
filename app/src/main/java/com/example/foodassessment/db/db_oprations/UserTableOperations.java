@@ -9,6 +9,9 @@ import com.example.foodassessment.db.DBHelper;
 import com.example.foodassessment.db.models.UserModel;
 import com.example.foodassessment.db.tables.UserTable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserTableOperations {
     DBHelper helper;
 
@@ -16,52 +19,69 @@ public class UserTableOperations {
         helper = new DBHelper(context);
     }
 
-    public long insertUserData(UserModel userData) {
+    public boolean insertUserData(UserModel userData) {
+        // this func will return a boolean value true if insert done or false if not
         SQLiteDatabase dbb = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(UserTable.USER_NAME, userData.name);
         contentValues.put(UserTable.USER_GENDER, userData.gender);
         contentValues.put(UserTable.USER_AGE, userData.age);
         contentValues.put(UserTable.USER_HEIGHT, userData.height);
         contentValues.put(UserTable.USER_WEIGHT, userData.weight);
-        return dbb.insert(UserTable.TABLE_NAME, null, contentValues);
-    }
-
-    public UserModel getUserData() {
-        SQLiteDatabase db = helper.getWritableDatabase();
-        String[] columns = {UserTable.USER_ID, UserTable.USER_NAME, UserTable.USER_GENDER,
-                UserTable.USER_AGE, UserTable.USER_HEIGHT, UserTable.USER_WEIGHT};
-        Cursor cursor = db.query(UserTable.TABLE_NAME, columns, null, null, null, null, null);
-        UserModel userModel = new UserModel();
-
-        while (cursor.moveToNext()) {
-            userModel.id = cursor.getInt(cursor.getColumnIndex(UserTable.USER_ID));
-            userModel.name = cursor.getString(cursor.getColumnIndex(UserTable.USER_NAME));
-            userModel.gender = cursor.getInt(cursor.getColumnIndex(UserTable.USER_GENDER));
-            userModel.age = cursor.getInt(cursor.getColumnIndex(UserTable.USER_AGE));
-            userModel.height = cursor.getInt(cursor.getColumnIndex(UserTable.USER_HEIGHT));
-            userModel.weight = cursor.getDouble(cursor.getColumnIndex(UserTable.USER_WEIGHT));
+        long insert =  dbb.insert(UserTable.TABLE_NAME, null, contentValues);
+        //here will return to know if it's done or not to use it as a dialog
+        if(insert == -1){
+            return false;
         }
-        return userModel;
+        else {
+            return true;
+        }
     }
 
+    public List<UserModel> getUserData() {
+        SQLiteDatabase db = helper.getReadableDatabase();
+        /*String[] columns = {UserTable.USER_ID, UserTable.USER_GENDER,
+                UserTable.USER_AGE, UserTable.USER_HEIGHT, UserTable.USER_WEIGHT};*/
+        List<UserModel> resultList = new ArrayList<>();
+        String queryString = "SELECT * FROM " + UserTable.TABLE_NAME;
+
+        Cursor cursor = db.rawQuery(queryString,null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int userID = cursor.getInt(0);
+                int userGender = cursor.getInt(1);
+                int userAge = cursor.getInt(2);
+                double userHeight = cursor.getInt(3);
+                double userWeight = cursor.getInt(4);
+                UserModel newUser = new UserModel(userID, userGender, userAge, userHeight, userWeight);
+                resultList.add(newUser);
+            }
+            while (cursor.moveToNext());
+        }
+        else {
+            //something went wrong
+        }
+        cursor.close();
+        db.close();
+        return resultList;
+    }
+/*
     public int deleteUserData(int id) {
         SQLiteDatabase db = helper.getWritableDatabase();
         String[] whereArgs = {id + ""};
 
         return db.delete(UserTable.TABLE_NAME, UserTable.USER_ID + " = ?", whereArgs);
-    }
+    }*/
 
-    public int updateUserData(UserModel userData) {
+    /*public int updateUserData(UserModel userData) {
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(UserTable.USER_NAME, userData.name);
         contentValues.put(UserTable.USER_GENDER, userData.gender);
         contentValues.put(UserTable.USER_AGE, userData.age);
         contentValues.put(UserTable.USER_HEIGHT, userData.height);
         contentValues.put(UserTable.USER_WEIGHT, userData.weight);
         String[] whereArgs = {userData.id + ""};
         return db.update(UserTable.TABLE_NAME, contentValues, UserTable.USER_ID + " = ?", whereArgs);
-    }
+    }*/
 
 }
