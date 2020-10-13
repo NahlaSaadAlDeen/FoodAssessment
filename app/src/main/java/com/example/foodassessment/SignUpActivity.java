@@ -66,7 +66,7 @@ public class SignUpActivity extends AppCompatActivity {
                 radioButtonSelected = findViewById(radioGroup.getCheckedRadioButtonId());
                 String vote = radioButtonSelected.getText().toString();
                 try {
-                    userModel = new UserModel(-1, vote,
+                    userModel = new UserModel(-1, 1,
                             Integer.parseInt(String.valueOf(et_age.getText())),
                             Double.parseDouble(String.valueOf(et_length.getText())),
                             Double.parseDouble(String.valueOf(et_weight.getText())));
@@ -96,7 +96,10 @@ public class SignUpActivity extends AppCompatActivity {
                 DataInsertion dataInsertion = new DataInsertion(SignUpActivity.this);
                 boolean successSalads = dataInsertion.insertSaladsFoodDetails();
                 boolean successFruits = dataInsertion.insertFruitsFoodDetails();
-                Log.e("result", successSalads + " + " + successFruits);
+                boolean successBread = dataInsertion.insertBreadFoodDetails();
+                boolean successMeat = dataInsertion.insertMeatFoodDetails();
+                boolean successMilk = dataInsertion.insertMilkFoodDetails();
+                Log.e("result", successSalads + " + " + successFruits + " + " + successBread + " + " + successMeat + " + " + successMilk);
 
             } catch (Exception e) {
                 progressBar.setVisibility(View.GONE);
