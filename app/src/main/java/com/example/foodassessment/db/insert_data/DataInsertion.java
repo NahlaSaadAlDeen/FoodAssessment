@@ -1160,7 +1160,7 @@ public class DataInsertion {
 
             boolean success = false, success_1 = false, success_2 = false, success2 = false, success2_1 = false, success2_2 = false, success3 = false, success3_1 = false,
                     success4 = false, success5 = false, success6 = false, success7 = false, success7_1 = false, success7_2 = false, success7_3 = false, success8 = false,
-                    success9 = false, success9_1 = false, success9_2 = false;
+                    success9 = false, success9_2 = false;
 
             // الألبان
             // milk
@@ -1290,6 +1290,91 @@ public class DataInsertion {
 
             if (success && success_1 && success_2 && success2 && success2_1 && success2_2 && success3 && success3_1 && success4 && success5 && success6 && success7 &&
                     success7_1 && success7_2 && success7_3 && success8 && success9 && success9_2) {
+                return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
+
+    public boolean insertDrinksFoodDetails() {
+
+        // do insert all drinks data in database for first time
+        try {
+            FoodDetailsTableOperations foodDetailsTableOperations = new FoodDetailsTableOperations(context);
+            FoodTableOperations foodTableOperations = new FoodTableOperations(context);
+
+            boolean success = false, success2 = false, success3 = false, success4 = false, success5 = false, success6 = false, success7 = false, success8 = false, success9 = false;
+
+            // العصائر و المشروبات
+            // drinks
+            String foodType = "العصائر و المشروبات";
+            byte[] img = convertDrawableToByteArray(R.drawable.l1);
+            FoodModel food1 = new FoodModel("عصير تمر هنديم", "", img, 200);
+            long id = foodTableOperations.insertFoodData(food1);
+            if (id > 0) {
+                FoodDetailsModel foodModel = new FoodDetailsModel("عصير تمر هندي", "كوب", 80, 20, 2, 2, 0, 0, 0, id, foodType);
+                success = foodDetailsTableOperations.insertFoodData(foodModel);
+            }
+            byte[] img2 = convertDrawableToByteArray(R.drawable.l2);
+            FoodModel food2 = new FoodModel("عصير خروب", "", img2, 200);
+            long id2 = foodTableOperations.insertFoodData(food2);
+            if (id2 > 0) {
+                FoodDetailsModel foodModel2 = new FoodDetailsModel("عصير خروب", "كوب", 150, 30, 0, 0, 0, 0, 0, id2, foodType);
+                success2 = foodDetailsTableOperations.insertFoodData(foodModel2);
+            }
+            byte[] img3 = convertDrawableToByteArray(R.drawable.l3);
+            FoodModel food3 = new FoodModel("عصير كركديه", "", img3, 200);
+            long id3 = foodTableOperations.insertFoodData(food3);
+            if (id3 > 0) {
+                FoodDetailsModel foodModel3 = new FoodDetailsModel("عصير كركديه", "كوب", 0.0, 0.0, 0.0, 0.0, 0, 0, 0, id3, foodType);
+                success3 = foodDetailsTableOperations.insertFoodData(foodModel3);
+            }
+            byte[] img4 = convertDrawableToByteArray(R.drawable.l4);
+            FoodModel food4 = new FoodModel("كوكتيل فواكه", "", img4, 200);
+            long id4 = foodTableOperations.insertFoodData(food4);
+            if (id4 > 0) {
+                FoodDetailsModel foodModel4 = new FoodDetailsModel("كوكتيل فواكه", "كوب", 120, 30, 0.0, 0.0, 0, 0, 0, id4, foodType);
+                success4 = foodDetailsTableOperations.insertFoodData(foodModel4);
+            }
+            byte[] img5 = convertDrawableToByteArray(R.drawable.l5);
+            FoodModel food5 = new FoodModel("عصير مانجا", "", img5, 200);
+            long id5 = foodTableOperations.insertFoodData(food5);
+            if (id5 > 0) {
+                FoodDetailsModel foodModel5 = new FoodDetailsModel("عصير مانجا", "كوب", 200, 50, 1.5, 0.5, 0, 0, 0, id5, foodType);
+                success5 = foodDetailsTableOperations.insertFoodData(foodModel5);
+            }
+            byte[] img6 = convertDrawableToByteArray(R.drawable.l6);
+            FoodModel food6 = new FoodModel("عصير جوافه", "", img6, 200);
+            long id6 = foodTableOperations.insertFoodData(food6);
+            if (id6 > 0) {
+                FoodDetailsModel foodModel6 = new FoodDetailsModel("عصير جوافه", "كوب", 70, 15, 1, 60, 0, 0, 0, id6, foodType);
+                success6 = foodDetailsTableOperations.insertFoodData(foodModel6);
+            }
+            byte[] img7 = convertDrawableToByteArray(R.drawable.l7);
+            FoodModel food7 = new FoodModel("عصير رمان", "", img7, 200);
+            long id7 = foodTableOperations.insertFoodData(food7);
+            if (id7 > 0) {
+                FoodDetailsModel foodModel7 = new FoodDetailsModel("عصير رمان", "كوب", 130, 30, 0.5, 1, 0, 0, 0, id7, foodType);
+                success7 = foodDetailsTableOperations.insertFoodData(foodModel7);
+            }
+            byte[] img8 = convertDrawableToByteArray(R.drawable.l8);
+            FoodModel food8 = new FoodModel("عصير ليمون", "", img8, 200);
+            long id8 = foodTableOperations.insertFoodData(food8);
+            if (id8 > 0) {
+                FoodDetailsModel foodModel8 = new FoodDetailsModel("عصير ليمون", "كوب", 250, 65, 0.5, 0, 0, 0, 0, id8, foodType);
+                success8 = foodDetailsTableOperations.insertFoodData(foodModel8);
+            }
+            byte[] img9 = convertDrawableToByteArray(R.drawable.l9);
+            FoodModel food9 = new FoodModel("اعشاب", "", img9, 100);
+            long id9 = foodTableOperations.insertFoodData(food9);
+            if (id9 > 0) {
+                FoodDetailsModel foodModel9 = new FoodDetailsModel("اعشاب", "نصف كوب", 0.0, 0.0, 0.0, 0.0, 0, 0, 0, id9, foodType);
+                success9 = foodDetailsTableOperations.insertFoodData(foodModel9);
+            }
+
+            if (success && success2 && success3 && success4 && success5 && success6 && success7 && success8 && success9) {
                 return true;
             }
         } catch (Exception e) {
