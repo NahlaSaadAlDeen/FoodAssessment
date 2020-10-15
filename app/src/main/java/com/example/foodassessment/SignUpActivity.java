@@ -106,9 +106,10 @@ public class SignUpActivity extends AppCompatActivity {
                 boolean successFats = dataInsertion.insertFatsFoodDetails();
                 boolean successGrains = dataInsertion.insertGrainsFoodDetails();
                 boolean successBiscuits = dataInsertion.insertBiscuitsFoodDetails();
+                boolean successVegetables = dataInsertion.insertVegetablesFoodDetails();
                 Log.e("result", successSalads + " + " + successFruits + " + " + successBread + " + " + successMeat + " + " + successMilk
                         + " + " + successDrinks + " + " + successNuts + " + " + successAdds + " + " + successBeans + " + " + successFats + " + " + successGrains
-                        + " + " + successBiscuits);
+                        + " + " + successBiscuits + " + " + successVegetables);
 
             } catch (Exception e) {
                 progressBar.setVisibility(View.GONE);
