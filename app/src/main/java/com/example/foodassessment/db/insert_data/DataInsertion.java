@@ -3566,6 +3566,2686 @@ public class DataInsertion {
         return false;
     }
 
+    // الوجبات الرئيسية
+    public boolean insertBasicMealsFoodDetails() {
+
+        // do insert all basic meals data in database for first time
+        try {
+            FoodDetailsTableOperations foodDetailsTableOperations = new FoodDetailsTableOperations(context);
+            FoodTableOperations foodTableOperations = new FoodTableOperations(context);
+
+            boolean success = false, success_1 = false, success_2 = false, success2 = false, success2_1 = false, success2_2 = false, success3 = false, success3_1 = false,
+                    success3_2 = false, success4 = false, success4_1 = false, success4_2 = false, success5 = false, success5_1 = false, success5_2 = false, success6 = false,
+                    success6_1 = false, success6_2 = false, success7 = false, success7_1 = false, success7_2 = false, success8 = false, success8_1 = false, success9 = false,
+                    success9_1 = false, success9_2 = false, success10 = false, success10_1 = false, success10_2 = false, success11 = false, success11_1 = false,
+                    success11_2 = false, success12 = false, success12_1 = false, success12_2 = false, success12_3 = false, success13 = false, success13_1 = false,
+                    success14 = false, success15 = false, success16 = false, success17 = false, success17_1 = false, success17_2 = false, success18 = false, success19 = false,
+                    success20 = false, success20_1 = false, success20_2 = false, success21 = false, success21_1 = false, success21_2 = false, success21_3 = false, success22 = false,
+                    success23 = false, success24 = false, success24_1 = false, success25 = false, success25_1 = false, success26 = false, success26_1 = false, success27 = false,
+                    success27_1 = false, success27_2 = false, success28 = false, success28_1 = false, success29 = false, success29_1 = false, success30 = false, success30_1 = false,
+                    success30_2 = false, success31 = false, success31_1 = false, success31_2 = false, success32 = false, success32_1 = false, success32_2 = false, success33 = false,
+                    success33_1 = false, success33_2 = false, success34 = false, success34_1 = false, success34_2 = false, success35 = false, success35_1 = false, success35_2 = false,
+                    success36 = false, success36_1 = false, success36_2 = false, success37 = false, success37_1 = false, success37_2 = false, success38 = false, success39 = false,
+                    success40 = false, success40_1 = false, success40_2 = false, success41 = false, success41_1 = false, success41_2 = false, success42 = false, success42_1 = false,
+                    success42_2 = false, success43 = false, success43_1 = false, success43_2 = false, success44 = false, success44_1 = false, success45 = false, success45_1 = false,
+                    success45_2 = false, success46 = false, success46_1 = false, success46_2 = false, success47 = false, success47_1 = false, success47_2 = false, success48 = false,
+                    success48_1 = false, success49 = false, success49_1 = false, success50 = false, success50_1 = false, success51 = false, success52 = false, success52_1 = false,
+                    success52_2 = false, success53 = false, success53_1 = false, success53_2 = false, success54 = false, success54_1 = false, success54_2 = false, success55 = false,
+                    success55_1 = false, success56 = false, success56_1 = false, success56_2 = false, success57 = false, success57_1 = false, success57_2 = false, success58 = false,
+                    success58_1 = false, success58_2 = false, success59 = false, success59_1 = false, success59_2 = false, success60 = false, success60_1 = false, success60_2 = false,
+                    success61 = false, success61_1 = false, success61_2 = false, success62 = false, success62_1 = false, success62_2 = false, success63 = false, success63_1 = false,
+                    success63_2 = false, success64 = false, success64_1 = false, success64_2 = false, success65 = false, success65_1 = false, success65_2 = false, success66 = false,
+                    success66_1 = false, success66_2 = false, success67 = false, success67_1 = false, success67_2 = false, success68 = false, success68_1 = false, success68_2 = false,
+                    success69 = false, success69_1 = false, success69_2 = false, success70 = false, success70_1 = false, success70_2 = false, success71 = false, success71_1 = false,
+                    success71_2 = false, success72 = false, success72_1 = false, success73 = false, success73_1 = false, success74 = false, success74_1 = false, success75 = false,
+                    success76 = false, success77 = false, success78 = false, success79 = false, success80 = false, success81 = false, success82 = false, success82_1 = false,
+                    success83 = false, success84 = false, success85 = false, success85_1 = false, success86 = false, success86_1 = false, success87 = false, success87_1 = false,
+                    success87_2 = false, success88 = false, success88_1 = false, success88_2 = false, success89 = false, success89_1 = false, success89_2 = false, success90 = false,
+                    success90_1 = false, success90_2 = false, success91 = false, success92 = false, success93 = false, success94 = false, success94_1 = false, success94_2 = false,
+                    success95 = false, success95_1 = false, success95_2 = false, success96 = false, success96_1 = false, success96_2 = false, success97 = false, success97_1 = false,
+                    success97_2 = false, success98 = false, success98_1 = false, success98_2 = false, success99 = false, success99_1 = false, success99_2 = false, success100 = false,
+                    success100_1 = false, success100_2 = false, success101 = false, success101_1 = false, success101_2 = false, success102 = false, success102_1 = false, success102_2 = false,
+                    success103 = false, success103_1 = false, success103_2 = false, success104 = false, success104_1 = false, success104_2 = false, success105 = false, success105_1 = false,
+                    success105_2 = false, success106 = false, success106_1 = false, success106_2 = false, success107 = false, success107_1 = false, success107_2 = false, success108 = false,
+                    success108_1 = false, success108_2 = false, success109 = false, success109_1 = false, success109_2 = false, success110 = false, success110_1 = false, success110_2 = false,
+                    success111 = false, success111_1 = false, success111_2 = false, success112 = false, success112_1 = false, success112_2 = false, success113 = false, success113_1 = false,
+                    success113_2 = false, success114 = false, success114_1 = false, success114_2 = false, success115 = false, success115_1 = false, success115_2 = false, success116 = false,
+                    success116_1 = false, success116_2 = false, success117 = false, success117_1 = false, success117_2 = false, success118 = false, success118_1 = false, success118_2 = false,
+                    success119 = false, success119_1 = false, success119_2 = false, success120 = false, success120_1 = false, success120_2 = false, success121 = false, success121_1 = false,
+                    success121_2 = false, success122 = false, success122_1 = false, success122_2 = false, success123 = false, success123_1 = false, success123_2 = false, success124 = false,
+                    success124_1 = false, success124_2 = false, success125 = false, success125_1 = false, success125_2 = false, success126 = false, success126_1 = false, success126_2 = false,
+                    success127 = false, success127_1 = false, success127_2 = false, success128 = false, success128_1 = false, success128_2 = false, success129 = false, success129_1 = false,
+                    success129_2 = false, success130 = false, success130_1 = false, success130_2 = false, success131 = false, success132 = false, success133 = false, success133_1 = false,
+                    success134 = false, success134_1 = false, success135 = false, success135_1 = false, success136 = false, success136_1 = false, success137 = false, success137_1 = false,
+                    success137_2 = false, success138 = false, success139 = false, success139_1 = false, success139_2 = false, success140 = false, success140_1 = false, success140_2 = false,
+                    success141 = false, success141_1 = false, success141_2 = false, success142 = false, success143 = false, success143_1 = false, success144 = false, success144_1 = false,
+                    success145 = false, success145_1 = false, success145_2 = false, success146 = false, success146_1 = false, success146_2 = false, success147 = false, success147_1 = false,
+                    success147_2 = false, success148 = false, success148_1 = false, success149 = false, success149_1 = false, success149_2 = false;
+
+            // الوجبات الرئيسية
+            // basic meals
+            String foodType = "الوجبات الرئيسية";
+            byte[] img = convertDrawableToByteArray(R.drawable.h1_1);
+            FoodModel food1 = new FoodModel("صيادية سمك", "", img, 160);
+            long id = foodTableOperations.insertFoodData(food1);
+            if (id > 0) {
+                FoodDetailsModel foodModel = new FoodDetailsModel("صيادية سمك", "2 مغرفة أرز قطعة سمك متوسطة\n", 340, 20, 25, 16, 0, 0, 0, id, foodType);
+                success = foodDetailsTableOperations.insertFoodData(foodModel);
+            }
+            byte[] img_1 = convertDrawableToByteArray(R.drawable.h1_2);
+            FoodModel food1_1 = new FoodModel("صيادية سمك", "", img_1, 200);
+            long id_1 = foodTableOperations.insertFoodData(food1_1);
+            if (id_1 > 0) {
+                FoodDetailsModel foodModel = new FoodDetailsModel("صيادية سمك", "3 مغارف ارز قطة سمك متوسطة", 450, 25, 28, 23, 0, 0, 0, id_1, foodType);
+                success_1 = foodDetailsTableOperations.insertFoodData(foodModel);
+            }
+            byte[] img_2 = convertDrawableToByteArray(R.drawable.h1_3);
+            FoodModel food1_2 = new FoodModel("صيادية سمك", "", img_2, 350);
+            long id_2 = foodTableOperations.insertFoodData(food1_2);
+            if (id_2 > 0) {
+                FoodDetailsModel foodModel = new FoodDetailsModel("صيادية سمك", "5 مغارف أرز 2 قطعة  سمك متوسطة", 700, 40, 45, 35, 0, 0, 0, id_2, foodType);
+                success_2 = foodDetailsTableOperations.insertFoodData(foodModel);
+            }
+            byte[] img2 = convertDrawableToByteArray(R.drawable.h2_1);
+            FoodModel food2 = new FoodModel("ربيعية فول", "", img2, 70);
+            long id2 = foodTableOperations.insertFoodData(food2);
+            if (id2 > 0) {
+                FoodDetailsModel foodModel2 = new FoodDetailsModel("ربيعية فول", "2 مغرفة أرز وفول", 115, 12, 2, 5, 0, 0, 0, id2, foodType);
+                success2 = foodDetailsTableOperations.insertFoodData(foodModel2);
+            }
+            byte[] img2_1 = convertDrawableToByteArray(R.drawable.h2_2);
+            FoodModel food2_1 = new FoodModel("ربيعية فول", "", img2_1, 100);
+            long id2_1 = foodTableOperations.insertFoodData(food2_1);
+            if (id2_1 > 0) {
+                FoodDetailsModel foodModel2 = new FoodDetailsModel("ربيعية فول", "3 مغارف أرز وفول", 180, 17, 2.5, 10, 0, 0, 0, id2_1, foodType);
+                success2_1 = foodDetailsTableOperations.insertFoodData(foodModel2);
+            }
+            byte[] img2_2 = convertDrawableToByteArray(R.drawable.h2_3);
+            FoodModel food2_2 = new FoodModel("ربيعية فول", "", img2_2, 160);
+            long id2_2 = foodTableOperations.insertFoodData(food2_2);
+            if (id2_2 > 0) {
+                FoodDetailsModel foodModel2 = new FoodDetailsModel("ربيعية فول", "5 مغارف أرز", 300, 30, 4, 15, 0, 0, 0, id2_2, foodType);
+                success2_2 = foodDetailsTableOperations.insertFoodData(foodModel2);
+            }
+            byte[] img3 = convertDrawableToByteArray(R.drawable.h2_4);
+            FoodModel food3 = new FoodModel("ربيعية فول + صدر دجاج 80غم", "", img3, 150);
+            long id3 = foodTableOperations.insertFoodData(food3);
+            if (id3 > 0) {
+                FoodDetailsModel foodModel3 = new FoodDetailsModel("ربيعية فول + صدر دجاج 80غم", "2 مغرفة أرز و فول ", 350, 15, 30, 20, 0, 0, 0, id3, foodType);
+                success3 = foodDetailsTableOperations.insertFoodData(foodModel3);
+            }
+            byte[] img3_1 = convertDrawableToByteArray(R.drawable.h2_5);
+            FoodModel food3_1 = new FoodModel("ربيعية فول + صدر دجاج 80غم", "", img3_1, 180);
+            long id3_1 = foodTableOperations.insertFoodData(food3_1);
+            if (id3_1 > 0) {
+                FoodDetailsModel foodModel2 = new FoodDetailsModel("ربيعية فول + صدر دجاج 80غم", "3 مغارف أرزوفول", 420, 18, 30, 25, 0, 0, 0, id3_1, foodType);
+                success3_1 = foodDetailsTableOperations.insertFoodData(foodModel2);
+            }
+            byte[] img3_2 = convertDrawableToByteArray(R.drawable.h2_6);
+            FoodModel food3_2 = new FoodModel("ربيعية فول + صدر دجاج 80غم", "", img3_2, 240);
+            long id3_2 = foodTableOperations.insertFoodData(food3_2);
+            if (id3_2 > 0) {
+                FoodDetailsModel foodModel2 = new FoodDetailsModel("ربيعية فول + صدر دجاج 80غم", "5 مغارف أرزوفول", 550, 30, 35, 30, 0, 0, 0, id3_2, foodType);
+                success3_2 = foodDetailsTableOperations.insertFoodData(foodModel2);
+            }
+            byte[] img4 = convertDrawableToByteArray(R.drawable.h2_7);
+            FoodModel food4 = new FoodModel("ربيعية فول + فخذة دجاج 70غم", "", img4, 140);
+            long id4 = foodTableOperations.insertFoodData(food4);
+            if (id4 > 0) {
+                FoodDetailsModel foodModel4 = new FoodDetailsModel("ربيعية فول + فخذة دجاج 70غم", "2 مغارف أرزوفول", 370, 15, 25, 20, 0, 0, 0, id4, foodType);
+                success4 = foodDetailsTableOperations.insertFoodData(foodModel4);
+            }
+            byte[] img4_1 = convertDrawableToByteArray(R.drawable.h2_8);
+            FoodModel food4_1 = new FoodModel("ربيعية فول + فخذة دجاج 70غم", "", img4_1, 170);
+            long id4_1 = foodTableOperations.insertFoodData(food4_1);
+            if (id4_1 > 0) {
+                FoodDetailsModel foodModel4 = new FoodDetailsModel("ربيعية فول + فخذة دجاج 70غم", "3 مغارف أرزوفول", 440, 20, 25, 25, 0, 0, 0, id4_1, foodType);
+                success4_1 = foodDetailsTableOperations.insertFoodData(foodModel4);
+            }
+            byte[] img4_2 = convertDrawableToByteArray(R.drawable.h2_9);
+            FoodModel food4_2 = new FoodModel("ربيعية فول + فخذة دجاج 70غم", "", img4_2, 230);
+            long id4_2 = foodTableOperations.insertFoodData(food4_2);
+            if (id4_2 > 0) {
+                FoodDetailsModel foodModel4 = new FoodDetailsModel("ربيعية فول + فخذة دجاج 70غم", "5مغارف أرزوفول", 560, 30, 25, 30, 0, 0, 0, id4_2, foodType);
+                success4_2 = foodDetailsTableOperations.insertFoodData(foodModel4);
+            }
+            byte[] img5 = convertDrawableToByteArray(R.drawable.h2_10);
+            FoodModel food5 = new FoodModel("ربيعية فول. + لحمة عجل 90غم", "", img5, 160);
+            long id5 = foodTableOperations.insertFoodData(food5);
+            if (id5 > 0) {
+                FoodDetailsModel foodModel5 = new FoodDetailsModel("ربيعية فول. + لحمة عجل 90غم", "2 مغارف أرزوفول", 270, 15, 15, 15, 0, 0, 0, id5, foodType);
+                success5 = foodDetailsTableOperations.insertFoodData(foodModel5);
+            }
+            byte[] img5_1 = convertDrawableToByteArray(R.drawable.h2_11);
+            FoodModel food5_1 = new FoodModel("ربيعية فول. + لحمة عجل 90غم", "", img5_1, 160);
+            long id5_1 = foodTableOperations.insertFoodData(food5_1);
+            if (id5_1 > 0) {
+                FoodDetailsModel foodModel5 = new FoodDetailsModel("ربيعية فول. + لحمة عجل 90غم", "3 مغارف أرزوفول ", 340, 20, 15, 20, 0, 0, 0, id5_1, foodType);
+                success5_1 = foodDetailsTableOperations.insertFoodData(foodModel5);
+            }
+            byte[] img5_2 = convertDrawableToByteArray(R.drawable.h2_12);
+            FoodModel food5_2 = new FoodModel("ربيعية فول. + لحمة عجل 90غم", "", img5_2, 250);
+            long id5_2 = foodTableOperations.insertFoodData(food5_2);
+            if (id5_2 > 0) {
+                FoodDetailsModel foodModel5 = new FoodDetailsModel("ربيعية فول. + لحمة عجل 90غم", "5 مغارف أرزوفول", 450, 30, 20, 25, 0, 0, 0, id5_2, foodType);
+                success5_2 = foodDetailsTableOperations.insertFoodData(foodModel5);
+            }
+            byte[] img6 = convertDrawableToByteArray(R.drawable.h3_1);
+            FoodModel food6 = new FoodModel("محشي كوسا", "", img6, 250);
+            long id6 = foodTableOperations.insertFoodData(food6);
+            if (id6 > 0) {
+                FoodDetailsModel foodModel6 = new FoodDetailsModel("محشي كوسا", "3 كوسا متوسطة الحجم", 220, 30, 4, 6, 0, 0, 0, id6, foodType);
+                success6 = foodDetailsTableOperations.insertFoodData(foodModel6);
+            }
+            byte[] img6_1 = convertDrawableToByteArray(R.drawable.h3_2);
+            FoodModel food6_1 = new FoodModel("محشي كوسا", "", img6_1, 320);
+            long id6_1 = foodTableOperations.insertFoodData(food6_1);
+            if (id6_1 > 0) {
+                FoodDetailsModel foodModel6 = new FoodDetailsModel("محشي كوسا", "4 كوسا متوسطة الحجم", 320, 40, 5, 9, 0, 0, 0, id6_1, foodType);
+                success6_1 = foodDetailsTableOperations.insertFoodData(foodModel6);
+            }
+            byte[] img6_2 = convertDrawableToByteArray(R.drawable.h3_3);
+            FoodModel food6_2 = new FoodModel("محشي كوسا", "", img6_2, 380);
+            long id6_2 = foodTableOperations.insertFoodData(food6_2);
+            if (id6_2 > 0) {
+                FoodDetailsModel foodModel6 = new FoodDetailsModel("محشي كوسا", "5 كوسا متوسطة الحجم", 380, 50, 7, 12, 0, 0, 0, id6_2, foodType);
+                success6_2 = foodDetailsTableOperations.insertFoodData(foodModel6);
+            }
+            byte[] img7 = convertDrawableToByteArray(R.drawable.h4_1);
+            FoodModel food7 = new FoodModel("محشي باذنجان", "", img7, 300);
+            long id7 = foodTableOperations.insertFoodData(food7);
+            if (id7 > 0) {
+                FoodDetailsModel foodModel7 = new FoodDetailsModel("محشي باذنجان", "3 باذنجان متوسطة الحجم", 500, 70, 8, 15, 0, 0, 0, id7, foodType);
+                success7 = foodDetailsTableOperations.insertFoodData(foodModel7);
+            }
+            byte[] img7_1 = convertDrawableToByteArray(R.drawable.h4_2);
+            FoodModel food7_1 = new FoodModel("محشي باذنجان", "", img7_1, 450);
+            long id7_1 = foodTableOperations.insertFoodData(food7_1);
+            if (id7_1 > 0) {
+                FoodDetailsModel foodModel7 = new FoodDetailsModel("محشي باذنجان", "4 باذنجان متوسطة الحجم", 680, 90, 10, 25, 0, 0, 0, id7_1, foodType);
+                success7_1 = foodDetailsTableOperations.insertFoodData(foodModel7);
+            }
+            byte[] img7_2 = convertDrawableToByteArray(R.drawable.h4_3);
+            FoodModel food7_2 = new FoodModel("محشي باذنجان", "", img7_2, 550);
+            long id7_2 = foodTableOperations.insertFoodData(food7_2);
+            if (id7_2 > 0) {
+                FoodDetailsModel foodModel7 = new FoodDetailsModel("محشي باذنجان", "5 باذنجان متوسطة الحجم", 850, 120, 15, 30, 0, 0, 0, id7_2, foodType);
+                success7_2 = foodDetailsTableOperations.insertFoodData(foodModel7);
+            }
+            byte[] img8 = convertDrawableToByteArray(R.drawable.h5);
+            FoodModel food8 = new FoodModel("محشي يقطين", "", img8, 90);
+            long id8 = foodTableOperations.insertFoodData(food8);
+            if (id8 > 0) {
+                FoodDetailsModel foodModel8 = new FoodDetailsModel("محشي يقطين", "صغير", 100, 10, 1.5, 5, 0, 0, 0, id8, foodType);
+                success8 = foodDetailsTableOperations.insertFoodData(foodModel8);
+            }
+            FoodModel food8_1 = new FoodModel("محشي يقطين", "", 120);
+            long id8_1 = foodTableOperations.insertFoodData(food8_1);
+            if (id8_1 > 0) {
+                FoodDetailsModel foodModel8 = new FoodDetailsModel("محشي يقطين", "وسط", 130, 15, 2, 5, 0, 0, 0, id8_1, foodType);
+                success8_1 = foodDetailsTableOperations.insertFoodData(foodModel8);
+            }
+            byte[] img9 = convertDrawableToByteArray(R.drawable.h6_1);
+            FoodModel food9 = new FoodModel("محشي فليفة", "", img9, 120);
+            long id9 = foodTableOperations.insertFoodData(food9);
+            if (id9 > 0) {
+                FoodDetailsModel foodModel9 = new FoodDetailsModel("محشي فليفة", "صغير", 110, 10, 1.5, 0.0, 0, 0, 0, id9, foodType);
+                success9 = foodDetailsTableOperations.insertFoodData(foodModel9);
+            }
+            FoodModel food9_1 = new FoodModel("محشي فليفة", "", 140);
+            long id9_1 = foodTableOperations.insertFoodData(food9_1);
+            if (id9_1 > 0) {
+                FoodDetailsModel foodModel9 = new FoodDetailsModel("محشي فليفة", "وسط", 130, 15, 2, 0.5, 0, 0, 0, id9_1, foodType);
+                success9_1 = foodDetailsTableOperations.insertFoodData(foodModel9);
+            }
+            FoodModel food9_2 = new FoodModel("محشي فليفة", "", 170);
+            long id9_2 = foodTableOperations.insertFoodData(food9_2);
+            if (id9_2 > 0) {
+                FoodDetailsModel foodModel9 = new FoodDetailsModel("محشي فليفة", "كبير", 160, 20, 3, 1, 0, 0, 0, id9_2, foodType);
+                success9_2 = foodDetailsTableOperations.insertFoodData(foodModel9);
+            }
+            byte[] img10 = convertDrawableToByteArray(R.drawable.h6_2);
+            FoodModel food10 = new FoodModel("محشي فليفلة", "", img10, 140);
+            long id10 = foodTableOperations.insertFoodData(food10);
+            if (id10 > 0) {
+                FoodDetailsModel foodModel10 = new FoodDetailsModel("محشي فليفلة", "صغير", 110, 10, 1.5, 0.0, 0, 0, 0, id10, foodType);
+                success10 = foodDetailsTableOperations.insertFoodData(foodModel10);
+            }
+            FoodModel food10_1 = new FoodModel("محشي فليفلة", "", 170);
+            long id10_1 = foodTableOperations.insertFoodData(food10_1);
+            if (id10_1 > 0) {
+                FoodDetailsModel foodModel10 = new FoodDetailsModel("محشي فليفلة", "وسط", 130, 15, 2, 0.5, 0, 0, 0, id10_1, foodType);
+                success10_1 = foodDetailsTableOperations.insertFoodData(foodModel10);
+            }
+            FoodModel food10_2 = new FoodModel("محشي فليفلة", "", 200);
+            long id10_2 = foodTableOperations.insertFoodData(food10_2);
+            if (id10_2 > 0) {
+                FoodDetailsModel foodModel10 = new FoodDetailsModel("محشي فليفلة", "كبير", 160, 20, 3, 1, 0, 0, 0, id10_2, foodType);
+                success10_2 = foodDetailsTableOperations.insertFoodData(foodModel10);
+            }
+            byte[] img11 = convertDrawableToByteArray(R.drawable.h7);
+            FoodModel food11 = new FoodModel("محشي خيار", "", img11, 120);
+            long id11 = foodTableOperations.insertFoodData(food11);
+            if (id11 > 0) {
+                FoodDetailsModel foodModel11 = new FoodDetailsModel("محشي خيار", "صغير", 100, 10, 1.5, 5, 0, 0, 0, id11, foodType);
+                success11 = foodDetailsTableOperations.insertFoodData(foodModel11);
+            }
+            FoodModel food11_1 = new FoodModel("محشي خيار", "", 170);
+            long id11_1 = foodTableOperations.insertFoodData(food11_1);
+            if (id11_1 > 0) {
+                FoodDetailsModel foodModel11 = new FoodDetailsModel("محشي خيار", "وسط", 130, 15, 2, 5, 0, 0, 0, id11_1, foodType);
+                success11_1 = foodDetailsTableOperations.insertFoodData(foodModel11);
+            }
+            byte[] img12 = convertDrawableToByteArray(R.drawable.h8);
+            FoodModel food12 = new FoodModel("لسينة محشي (ورق  لسان الثور)", "", img12, 170);
+            long id12 = foodTableOperations.insertFoodData(food12);
+            if (id12 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لسينة محشي (ورق  لسان الثور)", "كوب", 200, 40, 4, 10, 0, 0, 0, id12, foodType);
+                success12 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img13 = convertDrawableToByteArray(R.drawable.h9_1);
+            FoodModel food13 = new FoodModel("دوالي (ورق العنب)", "", img13, 90);
+            long id13 = foodTableOperations.insertFoodData(food13);
+            if (id13 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("دوالي (ورق العنب)", "نصف كوب", 180, 20, 2.5, 10, 0, 0, 0, id13, foodType);
+                success13 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img13_1 = convertDrawableToByteArray(R.drawable.h9_2);
+            FoodModel food13_1 = new FoodModel("دوالي (ورق العنب)", "", img13_1, 180);
+            long id13_1 = foodTableOperations.insertFoodData(food13_1);
+            if (id13_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("دوالي (ورق العنب)", "كوب", 360, 40, 5, 15, 0, 0, 0, id13_1, foodType);
+                success13_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img14 = convertDrawableToByteArray(R.drawable.h10);
+            FoodModel food14 = new FoodModel("ملفوف", "", img14, 240);
+            long id14 = foodTableOperations.insertFoodData(food14);
+            if (id14 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ملفوف", "كوب", 450, 50, 6, 10, 0, 0, 0, id14, foodType);
+                success14 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img15 = convertDrawableToByteArray(R.drawable.h11);
+            FoodModel food15 = new FoodModel("لخنة (ورق القرنبيط)", "", img15, 130);
+            long id15 = foodTableOperations.insertFoodData(food15);
+            if (id15 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لخنة (ورق القرنبيط)", "كوب", 350, 40, 5, 15, 0, 0, 0, id15, foodType);
+                success15 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img16 = convertDrawableToByteArray(R.drawable.h12);
+            FoodModel food16 = new FoodModel("زمطوط أو زعمطوط", "", img16, 170);
+            long id16 = foodTableOperations.insertFoodData(food16);
+            if (id16 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("زمطوط أو زعمطوط", "كوب", 270, 40, 4, 6, 0, 0, 0, id16, foodType);
+                success16 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img17 = convertDrawableToByteArray(R.drawable.h13);
+            FoodModel food17 = new FoodModel("لفت محشي + طحينية", "", img17, 60);
+            long id17 = foodTableOperations.insertFoodData(food17);
+            if (id17 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لفت محشي + طحينية", "صغير", 80, 5, 1, 5, 0, 0, 0, id17, foodType);
+                success17 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            FoodModel food17_1 = new FoodModel("لفت محشي + طحينية", "", 80);
+            long id17_1 = foodTableOperations.insertFoodData(food17_1);
+            if (id17_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لفت محشي + طحينية", "وسط", 130, 10, 1.5, 10, 0, 0, 0, id17_1, foodType);
+                success17_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            FoodModel food17_2 = new FoodModel("لفت محشي + طحينية", "", 130);
+            long id17_2 = foodTableOperations.insertFoodData(food17_2);
+            if (id17_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لفت محشي + طحينية", "كبير", 180, 15, 2, 15, 0, 0, 0, id17_2, foodType);
+                success17_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img18 = convertDrawableToByteArray(R.drawable.h14);
+            FoodModel food18 = new FoodModel("يلنجي (ورق عنب بالخضار)", "", img18, 200);
+            long id18 = foodTableOperations.insertFoodData(food18);
+            if (id18 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يلنجي (ورق عنب بالخضار)", "كوب", 400, 50, 5, 15, 0, 0, 0, id18, foodType);
+                success18 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img19 = convertDrawableToByteArray(R.drawable.h15);
+            FoodModel food19 = new FoodModel("كوارع", "", img19, 380);
+            long id19 = foodTableOperations.insertFoodData(food19);
+            if (id19 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كوارع", "", 600, 100, 10, 20, 0, 0, 0, id19, foodType);
+                success19 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img20 = convertDrawableToByteArray(R.drawable.h16_1);
+            FoodModel food20 = new FoodModel("داوود باشا", "", img20, 270);
+            long id20 = foodTableOperations.insertFoodData(food20);
+            if (id20 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("داوود باشا", "2 مغرفة أرز+ نصف كوب كرات اللحم بالبندورة", 570, 20, 40, 35, 0, 0, 0, id20, foodType);
+                success20 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img20_1 = convertDrawableToByteArray(R.drawable.h16_2);
+            FoodModel food20_1 = new FoodModel("داوود باشا", "", img20_1, 330);
+            long id20_1 = foodTableOperations.insertFoodData(food20_1);
+            if (id20_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("داوود باشا", "3 مغارف أرز+نصف كوب كرات اللحم بالبندورة", 620, 30, 40, 35, 0, 0, 0, id20_1, foodType);
+                success20_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img20_2 = convertDrawableToByteArray(R.drawable.h16_3);
+            FoodModel food20_2 = new FoodModel("داوود باشا", "", img20_2, 500);
+            long id20_2 = foodTableOperations.insertFoodData(food20_2);
+            if (id20_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("داوود باشا", "5 مغارف أرز+كوب كرات اللحم بالبندورة", 1000, 40, 70, 70, 0, 0, 0, id20_2, foodType);
+                success20_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img21 = convertDrawableToByteArray(R.drawable.h17_1);
+            FoodModel food21 = new FoodModel("محشي دجاج بالأرز", "", img21, 900);
+            long id21 = foodTableOperations.insertFoodData(food21);
+            if (id21 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي دجاج بالأرز", "دجاجة 1 كيلو.", 1400, 100, 80, 100, 0, 0, 0, id21, foodType);
+                success21 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img21_1 = convertDrawableToByteArray(R.drawable.h17_2);
+            FoodModel food21_1 = new FoodModel("محشي دجاج بالأرز", "", img21_1, 450);
+            long id21_1 = foodTableOperations.insertFoodData(food21_1);
+            if (id21_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي دجاج بالأرز", "نصف دجاجة 0.5 كيلو", 700, 50, 40, 50, 0, 0, 0, id21_1, foodType);
+                success21_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img21_2 = convertDrawableToByteArray(R.drawable.h17_2);
+            FoodModel food21_2 = new FoodModel("محشي دجاج بالأرز", "", img21_2, 190);
+            long id21_2 = foodTableOperations.insertFoodData(food21_2);
+            if (id21_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي دجاج بالأرز", "فخذة الدجاجة محشية", 380, 25, 20, 20, 0, 0, 0, id21_2, foodType);
+                success21_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img21_3 = convertDrawableToByteArray(R.drawable.h17_2);
+            FoodModel food21_3 = new FoodModel("محشي دجاج بالأرز", "", img21_3, 190);
+            long id21_3 = foodTableOperations.insertFoodData(food21_3);
+            if (id21_3 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي دجاج بالأرز", "صدر الدجاجة محشية", 400, 25, 20, 20, 0, 0, 0, id21_3, foodType);
+                success21_3 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img22 = convertDrawableToByteArray(R.drawable.h18);
+            FoodModel food22 = new FoodModel("محشي زغاليل بالأرز", "", img22, 240);
+            long id22 = foodTableOperations.insertFoodData(food22);
+            if (id22 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي زغاليل بالأرز", "زغلول كامل", 400, 20, 30, 20, 0, 0, 0, id22, foodType);
+                success22 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img23 = convertDrawableToByteArray(R.drawable.h18);
+            FoodModel food23 = new FoodModel("محشي زغاليل بالأرز", "", img23, 240);
+            long id23 = foodTableOperations.insertFoodData(food23);
+            if (id23 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي زغاليل بالأرز", "زغلول كامل", 400, 20, 30, 20, 0, 0, 0, id23, foodType);
+                success23 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img24 = convertDrawableToByteArray(R.drawable.h19_1);
+            FoodModel food24 = new FoodModel("عدس مجروش بالأرز", "", img24, 170);
+            long id24 = foodTableOperations.insertFoodData(food24);
+            if (id24 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("عدس مجروش بالأرز", "نصف كوب", 140, 15, 5, 5, 0, 0, 0, id24, foodType);
+                success24 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img24_1 = convertDrawableToByteArray(R.drawable.h19_2);
+            FoodModel food24_1 = new FoodModel("عدس مجروش بالأرز", "", img24_1, 330);
+            long id24_1 = foodTableOperations.insertFoodData(food24_1);
+            if (id24_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("عدس مجروش بالأرز", "كوب", 280, 30, 10, 10, 0, 0, 0, id24_1, foodType);
+                success24_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img25 = convertDrawableToByteArray(R.drawable.h20);
+            FoodModel food25 = new FoodModel("محشي بندورة", "", img25, 60);
+            long id25 = foodTableOperations.insertFoodData(food25);
+            if (id25 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي بندورة", "صغير", 100, 10, 1.5, 4, 0, 0, 0, id25, foodType);
+                success25 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            FoodModel food25_1 = new FoodModel("محشي بندورة", "", 90);
+            long id25_1 = foodTableOperations.insertFoodData(food25_1);
+            if (id25_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي بندورة", "وسط", 140, 15, 2, 5, 0, 0, 0, id25_1, foodType);
+                success25_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img26 = convertDrawableToByteArray(R.drawable.h21);
+            FoodModel food26 = new FoodModel("محشي بطاطا", "", img26, 90);
+            long id26 = foodTableOperations.insertFoodData(food26);
+            if (id26 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي بطاطا", "وسط", 160, 20, 2, 5, 0, 0, 0, id26, foodType);
+                success26 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            FoodModel food26_1 = new FoodModel("محشي بطاطا", "", 100);
+            long id26_1 = foodTableOperations.insertFoodData(food26_1);
+            if (id26_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي بطاطا", "وسط", 170, 22, 2.5, 6, 0, 0, 0, id26_1, foodType);
+                success26_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img27 = convertDrawableToByteArray(R.drawable.h22);
+            FoodModel food27 = new FoodModel("محشي جزر", "", img27, 30);
+            long id27 = foodTableOperations.insertFoodData(food27);
+            if (id27 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي جزر", "صغير", 50, 5, 1, 2.5, 0, 0, 0, id27, foodType);
+                success27 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            FoodModel food27_1 = new FoodModel("محشي جزر", "", 40);
+            long id27_1 = foodTableOperations.insertFoodData(food27_1);
+            if (id27_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي جزر", "وسط", 60, 7.5, 1.5, 2.5, 0, 0, 0, id27_1, foodType);
+                success27_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            FoodModel food27_2 = new FoodModel("محشي جزر", "", 50);
+            long id27_2 = foodTableOperations.insertFoodData(food27_2);
+            if (id27_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("محشي جزر", "كبير", 90, 9, 2, 5, 0, 0, 0, id27_2, foodType);
+                success27_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img28 = convertDrawableToByteArray(R.drawable.h23_1);
+            FoodModel food28 = new FoodModel("أرز بالبندورة", "", img28, 150);
+            long id28 = foodTableOperations.insertFoodData(food28);
+            if (id28 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أرز بالبندورة", "نصف كوب", 170, 25, 3, 5, 0, 0, 0, id28, foodType);
+                success28 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img28_1 = convertDrawableToByteArray(R.drawable.h23_2);
+            FoodModel food28_1 = new FoodModel("أرز بالبندورة", "", img28_1, 300);
+            long id28_1 = foodTableOperations.insertFoodData(food28_1);
+            if (id28_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أرز بالبندورة", "كوب", 340, 50, 6, 10, 0, 0, 0, id28_1, foodType);
+                success28_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img29 = convertDrawableToByteArray(R.drawable.h24_1);
+            FoodModel food29 = new FoodModel("لبنية", "", img29, 170);
+            long id29 = foodTableOperations.insertFoodData(food29);
+            if (id29 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لبنية", "نصف كوب", 200, 25, 4.5, 8, 0, 0, 0, id29, foodType);
+                success29 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img29_1 = convertDrawableToByteArray(R.drawable.h24_2);
+            FoodModel food29_1 = new FoodModel("لبنية", "", img29_1, 340);
+            long id29_1 = foodTableOperations.insertFoodData(food29_1);
+            if (id29_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لبنية", "كوب", 400, 50, 9, 16, 0, 0, 0, id29_1, foodType);
+                success29_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img30 = convertDrawableToByteArray(R.drawable.h25_1);
+            FoodModel food30 = new FoodModel("بامية يخنة", "", img30, 270);
+            long id30 = foodTableOperations.insertFoodData(food30);
+            if (id30 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخنة", "2 مغرفة أرز+ نصف كوب يخنة بامية", 220, 25, 6, 10, 0, 0, 0, id30, foodType);
+                success30 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img30_1 = convertDrawableToByteArray(R.drawable.h25_2);
+            FoodModel food30_1 = new FoodModel("بامية يخنة", "", img30_1, 330);
+            long id30_1 = foodTableOperations.insertFoodData(food30_1);
+            if (id30_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخنة", "3 مغارف أرز+ نصف كوب يخنة بامية", 270, 35, 7, 10, 0, 0, 0, id30_1, foodType);
+                success30_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img30_2 = convertDrawableToByteArray(R.drawable.h25_3);
+            FoodModel food30_2 = new FoodModel("بامية يخنة", "", img30_2, 500);
+            long id30_2 = foodTableOperations.insertFoodData(food30_2);
+            if (id30_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخنة", "5 مغارف أرز+ كوب يخنة بامية", 300, 50, 9, 15, 0, 0, 0, id30_2, foodType);
+                success30_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img31 = convertDrawableToByteArray(R.drawable.h25_4);
+            FoodModel food31 = new FoodModel("بامية يخن + صدر دجاج 80 غم", "", img31, 350);
+            long id31 = foodTableOperations.insertFoodData(food31);
+            if (id31 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخن + صدر دجاج 80 غم", "2مغرفة أرز+ نصف كوب يخنة بامية", 450, 25, 35, 25, 0, 0, 0, id31, foodType);
+                success31 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img31_1 = convertDrawableToByteArray(R.drawable.h25_5);
+            FoodModel food31_1 = new FoodModel("بامية يخن + صدر دجاج 80 غم", "", img31_1, 400);
+            long id31_1 = foodTableOperations.insertFoodData(food31_1);
+            if (id31_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخن + صدر دجاج 80 غم", "3 مغارف أرز+نصف كوب يخنة بامية", 500, 35, 35, 25, 0, 0, 0, id31_1, foodType);
+                success31_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img31_2 = convertDrawableToByteArray(R.drawable.h25_6);
+            FoodModel food31_2 = new FoodModel("بامية يخن + صدر دجاج 80 غم", "", img31_2, 580);
+            long id31_2 = foodTableOperations.insertFoodData(food31_2);
+            if (id31_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخن + صدر دجاج 80 غم", "5 مغارف أرز+ كوب يخنة بامية", 550, 50, 40, 30, 0, 0, 0, id31_2, foodType);
+                success31_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img32 = convertDrawableToByteArray(R.drawable.h25_7);
+            FoodModel food32 = new FoodModel("بامية يخنة + فخذة دجاج 70 غم", "", img32, 340);
+            long id32 = foodTableOperations.insertFoodData(food32);
+            if (id32 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخنة + فخذة دجاج 70 غم", "2 مغرفة أرز+ نصف كوب يخنة بامية", 470, 25, 25, 25, 0, 0, 0, id32, foodType);
+                success32 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img32_1 = convertDrawableToByteArray(R.drawable.h25_8);
+            FoodModel food32_1 = new FoodModel("بامية يخنة + فخذة دجاج 70 غم", "", img32_1, 400);
+            long id32_1 = foodTableOperations.insertFoodData(food32_1);
+            if (id32_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخنة + فخذة دجاج 70 غم", "3مغارف أرز+ نصف كوب يخنة بامية", 530, 35, 25, 25, 0, 0, 0, id32_1, foodType);
+                success32_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img32_2 = convertDrawableToByteArray(R.drawable.h25_9);
+            FoodModel food32_2 = new FoodModel("بامية يخنة + فخذة دجاج 70 غم", "", img32_2, 870);
+            long id32_2 = foodTableOperations.insertFoodData(food32_2);
+            if (id32_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخنة + فخذة دجاج 70 غم", "5 مغارف أرز+ كوب يخنة بامية", 560, 50, 30, 30, 0, 0, 0, id32_2, foodType);
+                success32_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img33 = convertDrawableToByteArray(R.drawable.h25_10);
+            FoodModel food33 = new FoodModel("بامية يخنة+ لحمة عجل 90 غم", "", img33, 360);
+            long id33 = foodTableOperations.insertFoodData(food33);
+            if (id33 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخنة+ لحمة عجل 90 غم", "2 مغرفة أرز+ نصف كوب يخنة بامية", 370, 25, 20, 20, 0, 0, 0, id33, foodType);
+                success33 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img33_1 = convertDrawableToByteArray(R.drawable.h25_11);
+            FoodModel food33_1 = new FoodModel("بامية يخنة+ لحمة عجل 90 غم", "", img33_1, 420);
+            long id33_1 = foodTableOperations.insertFoodData(food33_1);
+            if (id33_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخنة+ لحمة عجل 90 غم", "3 مغارف أرز+ نصف كوب يخنة بامية", 420, 35, 20, 20, 0, 0, 0, id33_1, foodType);
+                success33_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img33_2 = convertDrawableToByteArray(R.drawable.h25_12);
+            FoodModel food33_2 = new FoodModel("بامية يخنة+ لحمة عجل 90 غم", "", img33_2, 590);
+            long id33_2 = foodTableOperations.insertFoodData(food33_2);
+            if (id33_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("بامية يخنة+ لحمة عجل 90 غم", "5 مغارف أرز+ كوب يخنة بامية", 460, 50, 25, 25, 0, 0, 0, id33_2, foodType);
+                success33_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img34 = convertDrawableToByteArray(R.drawable.h26_1);
+            FoodModel food34 = new FoodModel("يخنة بطاطا", "", img34, 220);
+            long id34 = foodTableOperations.insertFoodData(food34);
+            if (id34 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاطا", "2 مغرفة أرز+نصف كوب يخنة", 200, 30, 3, 6, 0, 0, 0, id34, foodType);
+                success34 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img34_1 = convertDrawableToByteArray(R.drawable.h26_2);
+            FoodModel food34_1 = new FoodModel("يخنة بطاطا", "", img34_1, 280);
+            long id34_1 = foodTableOperations.insertFoodData(food34_1);
+            if (id34_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاطا", "3 مغارف أرز+نصف كوب يخنة", 260, 40, 4, 6, 0, 0, 0, id34_1, foodType);
+                success34_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img34_2 = convertDrawableToByteArray(R.drawable.h26_3);
+            FoodModel food34_2 = new FoodModel("يخنة بطاطا", "", img34_2, 520);
+            long id34_2 = foodTableOperations.insertFoodData(food34_2);
+            if (id34_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاطا", "5 مغارف أرز+كوب يخنة", 400, 70, 6, 12, 0, 0, 0, id34_2, foodType);
+                success34_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img35 = convertDrawableToByteArray(R.drawable.h26_4);
+            FoodModel food35 = new FoodModel("يخنة بطاطا +صدر دجاج", "", img35, 300);
+            long id35 = foodTableOperations.insertFoodData(food35);
+            if (id35 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاطا +صدر دجاج", "2 مغرفة أرز+نصف كوب يخنة", 440, 30, 30, 20, 0, 0, 0, id35, foodType);
+                success35 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img35_1 = convertDrawableToByteArray(R.drawable.h26_5);
+            FoodModel food35_1 = new FoodModel("يخنة بطاطا +صدر دجاج", "", img35_1, 360);
+            long id35_1 = foodTableOperations.insertFoodData(food35_1);
+            if (id35_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاطا +صدر دجاج", "3 مغارف أرز+نصف كوب يخنة", 500, 40, 35, 20, 0, 0, 0, id35_1, foodType);
+                success35_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img35_2 = convertDrawableToByteArray(R.drawable.h26_6);
+            FoodModel food35_2 = new FoodModel("يخنة بطاطا +صدر دجاج", "", img35_2, 600);
+            long id35_2 = foodTableOperations.insertFoodData(food35_2);
+            if (id35_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاطا +صدر دجاج", "5 مغارف أرز+كوب يخنة", 650, 70, 40, 25, 0, 0, 0, id35_2, foodType);
+                success35_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img36 = convertDrawableToByteArray(R.drawable.h26_7);
+            FoodModel food36 = new FoodModel("يخنة بطاطا+فخذة دجاج 70 غم", "", img36, 300);
+            long id36 = foodTableOperations.insertFoodData(food36);
+            if (id36 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاطا+فخذة دجاج 70 غم", "2 مغرفة أرز+نصف كوب يخنة", 460, 30, 25, 20, 0, 0, 0, id36, foodType);
+                success36 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img36_1 = convertDrawableToByteArray(R.drawable.h26_8);
+            FoodModel food36_1 = new FoodModel("يخنة بطاطا+فخذة دجاج 70 غم", "", img36_1, 350);
+            long id36_1 = foodTableOperations.insertFoodData(food36_1);
+            if (id36_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاطا+فخذة دجاج 70 غم", "3 مغارف أرز+نصف كوب يخنة", 500, 40, 25, 20, 0, 0, 0, id36_1, foodType);
+                success36_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img36_2 = convertDrawableToByteArray(R.drawable.h26_9);
+            FoodModel food36_2 = new FoodModel("يخنة بطاطا+فخذة دجاج 70 غم", "", img36_2, 600);
+            long id36_2 = foodTableOperations.insertFoodData(food36_2);
+            if (id36_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاطا+فخذة دجاج 70 غم", "5 مغارف أرز+كوب يخنة", 660, 70, 30, 30, 0, 0, 0, id36_2, foodType);
+                success36_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img37 = convertDrawableToByteArray(R.drawable.h26_7);
+            FoodModel food37 = new FoodModel("يخنة بطاط + لحمة عجل 90 غم", "", img37, 300);
+            long id37 = foodTableOperations.insertFoodData(food37);
+            if (id37 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاط + لحمة عجل 90 غم", "2 مغرفة أرز+نصف كوب يخنة", 350, 30, 15, 15, 0, 0, 0, id37, foodType);
+                success37 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img37_1 = convertDrawableToByteArray(R.drawable.h26_8);
+            FoodModel food37_1 = new FoodModel("يخنة بطاط + لحمة عجل 90 غم", "", img37_1, 370);
+            long id37_1 = foodTableOperations.insertFoodData(food37_1);
+            if (id37_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاط + لحمة عجل 90 غم", "3 مغارف أرز+نصف كوب يخنة", 400, 40, 20, 20, 0, 0, 0, id37_1, foodType);
+                success37_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img37_2 = convertDrawableToByteArray(R.drawable.h26_9);
+            FoodModel food37_2 = new FoodModel("يخنة بطاط + لحمة عجل 90 غم", "", img37_2, 600);
+            long id37_2 = foodTableOperations.insertFoodData(food37_2);
+            if (id37_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بطاط + لحمة عجل 90 غم", "5 مغارف أرز+كوب يخنة", 560, 70, 20, 20, 0, 0, 0, id37_2, foodType);
+                success37_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img38 = convertDrawableToByteArray(R.drawable.h27);
+            FoodModel food38 = new FoodModel("صينية باذنجان", "", img38, 150);
+            long id38 = foodTableOperations.insertFoodData(food38);
+            if (id38 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية باذنجان", "1 مغرفة دائرية", 230, 5, 2, 20, 0, 0, 0, id38, foodType);
+                success38 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img39 = convertDrawableToByteArray(R.drawable.h28);
+            FoodModel food39 = new FoodModel("صينية باذنجان بالبندورة و اللحم المفروم", "", img39, 160);
+            long id39 = foodTableOperations.insertFoodData(food39);
+            if (id39 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية باذنجان بالبندورة و اللحم المفروم", "1 مغرفة دائرية", 200, 5, 2, 15, 0, 0, 0, id39, foodType);
+                success39 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img40 = convertDrawableToByteArray(R.drawable.h29_1);
+            FoodModel food40 = new FoodModel("يخنة بازيلاء", "", img40, 200);
+            long id40 = foodTableOperations.insertFoodData(food40);
+            if (id40 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء", "2 مغرفة أرز+نصف كوب يخنة", 215, 30, 10, 4, 0, 0, 0, id40, foodType);
+                success40 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img40_1 = convertDrawableToByteArray(R.drawable.h29_2);
+            FoodModel food40_1 = new FoodModel("يخنة بازيلاء", "", img40_1, 270);
+            long id40_1 = foodTableOperations.insertFoodData(food40_1);
+            if (id40_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء", "3مغارف ارز+نصف كوب يخنة", 270, 45, 10, 4, 0, 0, 0, id40_1, foodType);
+                success40_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img40_2 = convertDrawableToByteArray(R.drawable.h29_3);
+            FoodModel food40_2 = new FoodModel("يخنة بازيلاء", "", img40_2, 440);
+            long id40_2 = foodTableOperations.insertFoodData(food40_2);
+            if (id40_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء", "5 مغارف ارز+كوب يخنة", 470, 70, 20, 8, 0, 0, 0, id40_2, foodType);
+                success40_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img41 = convertDrawableToByteArray(R.drawable.h29_4);
+            FoodModel food41 = new FoodModel("يخنة بازيلاء +صدر دجاج80 غم", "", img41, 280);
+            long id41 = foodTableOperations.insertFoodData(food41);
+            if (id41 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء +صدر دجاج80 غم", "2 مغرفة أرز+نصف كوب يخنة", 450, 30, 40, 15, 0, 0, 0, id41, foodType);
+                success41 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img41_1 = convertDrawableToByteArray(R.drawable.h29_5);
+            FoodModel food41_1 = new FoodModel("يخنة بازيلاء +صدر دجاج80 غم", "", img41_1, 350);
+            long id41_1 = foodTableOperations.insertFoodData(food41_1);
+            if (id41_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء +صدر دجاج80 غم", "3مغارف ارز+نصف كوب يخنة", 500, 45, 40, 15, 0, 0, 0, id41_1, foodType);
+                success41_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img41_2 = convertDrawableToByteArray(R.drawable.h29_6);
+            FoodModel food41_2 = new FoodModel("يخنة بازيلاء +صدر دجاج80 غم", "", img41_2, 520);
+            long id41_2 = foodTableOperations.insertFoodData(food41_2);
+            if (id41_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء +صدر دجاج80 غم", "5 مغارف ارز+كوب يخنة", 700, 70, 50, 20, 0, 0, 0, id41_2, foodType);
+                success41_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img42 = convertDrawableToByteArray(R.drawable.h29_7);
+            FoodModel food42 = new FoodModel("يخنة بازيلاء+فخذ الدجاج 70 غم", "", img42, 270);
+            long id42 = foodTableOperations.insertFoodData(food42);
+            if (id42 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء+فخذ الدجاج 70 غم", "2 مغرفة أرز+نصف كوب يخنة", 470, 30, 30, 20, 0, 0, 0, id42, foodType);
+                success42 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img42_1 = convertDrawableToByteArray(R.drawable.h29_8);
+            FoodModel food42_1 = new FoodModel("يخنة بازيلاء+فخذ الدجاج 70 غم", "", img42_1, 340);
+            long id42_1 = foodTableOperations.insertFoodData(food42_1);
+            if (id42_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء+فخذ الدجاج 70 غم", "3مغارف ارز+نصف كوب يخنة", 530, 45, 30, 20, 0, 0, 0, id42_1, foodType);
+                success42_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img42_2 = convertDrawableToByteArray(R.drawable.h29_9);
+            FoodModel food42_2 = new FoodModel("يخنة بازيلاء+فخذ الدجاج 70 غم", "", img42_2, 500);
+            long id42_2 = foodTableOperations.insertFoodData(food42_2);
+            if (id42_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء+فخذ الدجاج 70 غم", "5 مغارف ارز+كوب يخنة", 730, 70, 40, 25, 0, 0, 0, id42_2, foodType);
+                success42_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img43 = convertDrawableToByteArray(R.drawable.h29_10);
+            FoodModel food43 = new FoodModel("يخنة بازيلاء + لحمة عجل 90 غم.", "", img43, 300);
+            long id43 = foodTableOperations.insertFoodData(food43);
+            if (id43 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء + لحمة عجل 90 غم.", "2 مغرفة أرز+نصف كوب يخنة", 370, 30, 25, 15, 0, 0, 0, id43, foodType);
+                success43 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img43_1 = convertDrawableToByteArray(R.drawable.h29_11);
+            FoodModel food43_1 = new FoodModel("يخنة بازيلاء + لحمة عجل 90 غم.", "", img43_1, 360);
+            long id43_1 = foodTableOperations.insertFoodData(food43_1);
+            if (id43_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء + لحمة عجل 90 غم.", "3مغارف ارز+نصف كوب يخنة", 420, 45, 25, 15, 0, 0, 0, id43_1, foodType);
+                success43_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img43_2 = convertDrawableToByteArray(R.drawable.h29_12);
+            FoodModel food43_2 = new FoodModel("يخنة بازيلاء + لحمة عجل 90 غم.", "", img43_2, 530);
+            long id43_2 = foodTableOperations.insertFoodData(food43_2);
+            if (id43_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة بازيلاء + لحمة عجل 90 غم.", "5 مغارف ارز+كوب يخنة", 630, 70, 35, 20, 0, 0, 0, id43_2, foodType);
+                success43_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img44 = convertDrawableToByteArray(R.drawable.h30_1);
+            FoodModel food44 = new FoodModel("يخنة زهرة", "", img44, 280);
+            long id44 = foodTableOperations.insertFoodData(food44);
+            if (id44 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة زهرة", "3 مغرفة أرز+نصف كوب يخنة", 200, 35, 4.5, 6, 0, 0, 0, id44, foodType);
+                success44 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img44_1 = convertDrawableToByteArray(R.drawable.h30_2);
+            FoodModel food44_1 = new FoodModel("يخنة زهرة", "", img44_1, 450);
+            long id44_1 = foodTableOperations.insertFoodData(food44_1);
+            if (id44_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة زهرة", "5 مغارف ارز+كوب يخنة", 340, 50, 8, 10, 0, 0, 0, id44_1, foodType);
+                success44_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img45 = convertDrawableToByteArray(R.drawable.h30_3);
+            FoodModel food45 = new FoodModel("يخنة زهرة + صدر دجاج 80غم", "", img45, 300);
+            long id45 = foodTableOperations.insertFoodData(food45);
+            if (id45 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة زهرة + صدر دجاج 80غم", "2 مغرفة أرز+نصف كوب يخنة", 380, 20, 30, 20, 0, 0, 0, id45, foodType);
+                success45 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img45_1 = convertDrawableToByteArray(R.drawable.h30_4);
+            FoodModel food45_1 = new FoodModel("يخنة زهرة + صدر دجاج 80غم", "", img45_1, 360);
+            long id45_1 = foodTableOperations.insertFoodData(food45_1);
+            if (id45_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة زهرة + صدر دجاج 80غم", "3مغارف ارز+نصف كوب يخنة", 440, 35, 35, 20, 0, 0, 0, id45_1, foodType);
+                success45_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img45_2 = convertDrawableToByteArray(R.drawable.h30_5);
+            FoodModel food45_2 = new FoodModel("يخنة زهرة + صدر دجاج 80غم", "", img45_2, 530);
+            long id45_2 = foodTableOperations.insertFoodData(food45_2);
+            if (id45_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة زهرة + صدر دجاج 80غم", "5 مغارف ارز+كوب يخنة", 570, 50, 75, 25, 0, 0, 0, id45_2, foodType);
+                success45_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img46 = convertDrawableToByteArray(R.drawable.h30_6);
+            FoodModel food46 = new FoodModel("يخنة زهرة +فخذة دجاج 70 غم", "", img46, 300);
+            long id46 = foodTableOperations.insertFoodData(food46);
+            if (id46 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة زهرة +فخذة دجاج 70 غم", "2 مغرفة أرز+نصف كوب يخنة", 400, 20, 25, 20, 0, 0, 0, id46, foodType);
+                success46 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img46_1 = convertDrawableToByteArray(R.drawable.h30_7);
+            FoodModel food46_1 = new FoodModel("يخنة زهرة +فخذة دجاج 70 غم", "", img46_1, 350);
+            long id46_1 = foodTableOperations.insertFoodData(food46_1);
+            if (id46_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة زهرة +فخذة دجاج 70 غم", "3مغارف ارز+نصف كوب يخنة", 460, 35, 25, 20, 0, 0, 0, id46_1, foodType);
+                success46_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img46_2 = convertDrawableToByteArray(R.drawable.h30_8);
+            FoodModel food46_2 = new FoodModel("يخنة زهرة +فخذة دجاج 70 غم", "", img46_2, 520);
+            long id46_2 = foodTableOperations.insertFoodData(food46_2);
+            if (id46_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة زهرة +فخذة دجاج 70 غم", "5 مغارف ارز+كوب يخنة", 600, 50, 30, 25, 0, 0, 0, id46_2, foodType);
+                success46_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img47 = convertDrawableToByteArray(R.drawable.h30_9);
+            FoodModel food47 = new FoodModel("يخنة دجاج +لحمة 90 غم", "", img47, 320);
+            long id47 = foodTableOperations.insertFoodData(food47);
+            if (id47 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة دجاج +لحمة 90 غم", "2 مغرفة أرز+نصف كوب يخنة", 300, 20, 15, 15, 0, 0, 0, id47, foodType);
+                success47 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img47_1 = convertDrawableToByteArray(R.drawable.h30_10);
+            FoodModel food47_1 = new FoodModel("يخنة دجاج +لحمة 90 غم", "", img47_1, 380);
+            long id47_1 = foodTableOperations.insertFoodData(food47_1);
+            if (id47_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة دجاج +لحمة 90 غم", "3مغارف ارز+نصف كوب يخنة", 350, 35, 20, 15, 0, 0, 0, id47_1, foodType);
+                success47_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img47_2 = convertDrawableToByteArray(R.drawable.h30_11);
+            FoodModel food47_2 = new FoodModel("يخنة دجاج +لحمة 90 غم", "", img47_2, 550);
+            long id47_2 = foodTableOperations.insertFoodData(food47_2);
+            if (id47_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة دجاج +لحمة 90 غم", "5 مغارف ارز+كوب يخنة", 500, 50, 20, 20, 0, 0, 0, id47_2, foodType);
+                success47_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img48 = convertDrawableToByteArray(R.drawable.h31_1);
+            FoodModel food48 = new FoodModel("فول اخضر مسلوق", "", img48, 50);
+            long id48 = foodTableOperations.insertFoodData(food48);
+            if (id48 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول اخضر مسلوق", "ربع كوب", 25, 5, 2, 0.0, 0, 0, 0, id48, foodType);
+                success48 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img48_1 = convertDrawableToByteArray(R.drawable.h31_2);
+            FoodModel food48_1 = new FoodModel("فول اخضر مسلوق", "", img48_1, 100);
+            long id48_1 = foodTableOperations.insertFoodData(food48_1);
+            if (id48_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول اخضر مسلوق", "نصف كوب", 50, 10, 4, 0.0, 0, 0, 0, id48_1, foodType);
+                success48_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img49 = convertDrawableToByteArray(R.drawable.h32_1);
+            FoodModel food49 = new FoodModel("فول اخضر مقلي", "", img49, 30);
+            long id49 = foodTableOperations.insertFoodData(food49);
+            if (id49 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول اخضر مقلي", "ربع كوب", 70, 5, 2, 5, 0, 0, 0, id49, foodType);
+                success49 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img49_1 = convertDrawableToByteArray(R.drawable.h32_2);
+            FoodModel food49_1 = new FoodModel("فول اخضر مقلي", "", img49_1, 60);
+            long id49_1 = foodTableOperations.insertFoodData(food49_1);
+            if (id49_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول اخضر مقلي", "نصف كوب", 140, 10, 4, 10, 0, 0, 0, id49_1, foodType);
+                success49_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img50 = convertDrawableToByteArray(R.drawable.h33_1);
+            FoodModel food50 = new FoodModel("عكوب مسلوق", "", img50, 100);
+            long id50 = foodTableOperations.insertFoodData(food50);
+            if (id50 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("عكوب مسلوق", "نصف كوب", 25, 5, 2, 0.0, 0, 0, 0, id50, foodType);
+                success50 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img50_1 = convertDrawableToByteArray(R.drawable.h33_2);
+            FoodModel food50_1 = new FoodModel("عكوب مسلوق", "", img50_1, 200);
+            long id50_1 = foodTableOperations.insertFoodData(food50_1);
+            if (id50_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("عكوب مسلوق", "كوب", 50, 10, 4, 0.0, 0, 0, 0, id50_1, foodType);
+                success50_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img51 = convertDrawableToByteArray(R.drawable.h34);
+            FoodModel food51 = new FoodModel("عكوب مقلي", "", img51, 70);
+            long id51 = foodTableOperations.insertFoodData(food51);
+            if (id51 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("عكوب مقلي", "نصف كوب", 70, 5, 2, 5, 0, 0, 0, id51, foodType);
+                success51 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img52 = convertDrawableToByteArray(R.drawable.h35_1);
+            FoodModel food52 = new FoodModel("يخنة فاصولياء خضراء", "", img52, 200);
+            long id52 = foodTableOperations.insertFoodData(food52);
+            if (id52 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء خضراء", "2 مغرفة ارز+نصف كوب يخنه", 150, 20, 3, 5, 0, 0, 0, id52, foodType);
+                success52 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img52_1 = convertDrawableToByteArray(R.drawable.h35_2);
+            FoodModel food52_1 = new FoodModel("يخنة فاصولياء خضراء", "", img52_1, 270);
+            long id52_1 = foodTableOperations.insertFoodData(food52_1);
+            if (id52_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء خضراء", "3 مغارف ارز +نصف كوب يخنه", 200, 20, 4, 6, 0, 0, 0, id52_1, foodType);
+                success52_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img52_2 = convertDrawableToByteArray(R.drawable.h35_3);
+            FoodModel food52_2 = new FoodModel("يخنة فاصولياء خضراء", "", img52_2, 450);
+            long id52_2 = foodTableOperations.insertFoodData(food52_2);
+            if (id52_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء خضراء", "5 مغارف ارز+كوب يخنه", 340, 50, 8, 10, 0, 0, 0, id52_2, foodType);
+                success52_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img53 = convertDrawableToByteArray(R.drawable.h35_4);
+            FoodModel food53 = new FoodModel("يخنة فاصولياء خضراء + صدر دجاجه 80 غم", "", img53, 280);
+            long id53 = foodTableOperations.insertFoodData(food53);
+            if (id53 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء خضراء + صدر دجاجه 80 غم", "2 مغرفة ارز+نصف كوب يخنه", 380, 20, 30, 20, 0, 0, 0, id53, foodType);
+                success53 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img53_1 = convertDrawableToByteArray(R.drawable.h35_5);
+            FoodModel food53_1 = new FoodModel("يخنة فاصولياء خضراء + صدر دجاجه 80 غم", "", img53_1, 350);
+            long id53_1 = foodTableOperations.insertFoodData(food53_1);
+            if (id53_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء خضراء + صدر دجاجه 80 غم", "3 مغارف ارز +نصف كوب يخنه", 440, 20, 35, 20, 0, 0, 0, id53_1, foodType);
+                success53_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img53_2 = convertDrawableToByteArray(R.drawable.h35_6);
+            FoodModel food53_2 = new FoodModel("يخنة فاصولياء خضراء + صدر دجاجه 80 غم", "", img53_2, 530);
+            long id53_2 = foodTableOperations.insertFoodData(food53_2);
+            if (id53_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء خضراء + صدر دجاجه 80 غم", "5 مغارف ارز+كوب يخنه", 570, 50, 40, 25, 0, 0, 0, id53_2, foodType);
+                success53_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img54 = convertDrawableToByteArray(R.drawable.h35_7);
+            FoodModel food54 = new FoodModel("يخنة فاصولياء خضراء+فخذة دجاج 70غم", "", img54, 270);
+            long id54 = foodTableOperations.insertFoodData(food54);
+            if (id54 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء خضراء+فخذة دجاج 70غم", "2 مغرفة ارز+نصف كوب يخنه", 400, 20, 25, 20, 0, 0, 0, id54, foodType);
+                success54 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img54_1 = convertDrawableToByteArray(R.drawable.h35_8);
+            FoodModel food54_1 = new FoodModel("يخنة فاصولياء خضراء+فخذة دجاج 70غم", "", img54_1, 340);
+            long id54_1 = foodTableOperations.insertFoodData(food54_1);
+            if (id54_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء خضراء+فخذة دجاج 70غم", "3 مغارف ارز +نصف كوب يخنه", 460, 20, 25, 20, 0, 0, 0, id54_1, foodType);
+                success54_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img54_2 = convertDrawableToByteArray(R.drawable.h35_9);
+            FoodModel food54_2 = new FoodModel("يخنة فاصولياء خضراء+فخذة دجاج 70غم", "", img54_2, 520);
+            long id54_2 = foodTableOperations.insertFoodData(food54_2);
+            if (id54_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء خضراء+فخذة دجاج 70غم", "5 مغارف ارز+كوب يخنه", 600, 50, 30, 25, 0, 0, 0, id54_2, foodType);
+                success54_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img55 = convertDrawableToByteArray(R.drawable.h36_1);
+            FoodModel food55 = new FoodModel("لوبياء خضراء", "", img55, 100);
+            long id55 = foodTableOperations.insertFoodData(food55);
+            if (id55 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لوبياء خضراء", "نصف كوب", 120, 5, 2, 10, 0, 0, 0, id55, foodType);
+                success55 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img55_1 = convertDrawableToByteArray(R.drawable.h36_2);
+            FoodModel food55_1 = new FoodModel("لوبياء خضراء", "", img55_1, 200);
+            long id55_1 = foodTableOperations.insertFoodData(food55_1);
+            if (id55_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لوبياء خضراء", "كوب", 230, 10, 4, 20, 0, 0, 0, id55_1, foodType);
+                success55_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img56 = convertDrawableToByteArray(R.drawable.h37_1);
+            FoodModel food56 = new FoodModel("يخنة لوبياء جافة", "", img56, 230);
+            long id56 = foodTableOperations.insertFoodData(food56);
+            if (id56 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافة", "2 مغرفة ارز+نصف كوب يخنه", 240, 30, 10, 6, 0, 0, 0, id56, foodType);
+                success56 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img56_1 = convertDrawableToByteArray(R.drawable.h37_2);
+            FoodModel food56_1 = new FoodModel("يخنة لوبياء جافة", "", img56_1, 290);
+            long id56_1 = foodTableOperations.insertFoodData(food56_1);
+            if (id56_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافة", "3 مغارف ارز +نصف كوب يخنه", 300, 40, 10, 7, 0, 0, 0, id56_1, foodType);
+                success56_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img56_2 = convertDrawableToByteArray(R.drawable.h37_3);
+            FoodModel food56_2 = new FoodModel("يخنة لوبياء جافة", "", img56_2, 480);
+            long id56_2 = foodTableOperations.insertFoodData(food56_2);
+            if (id56_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافة", "5 مغارف ارز+كوب يخنه", 500, 70, 20, 10, 0, 0, 0, id56_2, foodType);
+                success56_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img57 = convertDrawableToByteArray(R.drawable.h37_4);
+            FoodModel food57 = new FoodModel("يخنة لوبياء جافة+صدر دجاج80غم", "", img57, 300);
+            long id57 = foodTableOperations.insertFoodData(food57);
+            if (id57 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافة+صدر دجاج80غم", "2 مغرفة ارز+نصف كوب يخنه", 480, 30, 40, 20, 0, 0, 0, id57, foodType);
+                success57 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img57_1 = convertDrawableToByteArray(R.drawable.h37_5);
+            FoodModel food57_1 = new FoodModel("يخنة لوبياء جافة+صدر دجاج80غم", "", img57_1, 370);
+            long id57_1 = foodTableOperations.insertFoodData(food57_1);
+            if (id57_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافة+صدر دجاج80غم", "3 مغارف ارز +نصف كوب يخنه", 500, 40, 40, 20, 0, 0, 0, id57_1, foodType);
+                success57_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img57_2 = convertDrawableToByteArray(R.drawable.h37_6);
+            FoodModel food57_2 = new FoodModel("يخنة لوبياء جافة+صدر دجاج80غم", "", img57_2, 550);
+            long id57_2 = foodTableOperations.insertFoodData(food57_2);
+            if (id57_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافة+صدر دجاج80غم", "5 مغارف ارز+كوب يخنه", 750, 70, 50, 25, 0, 0, 0, id57_2, foodType);
+                success57_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img58 = convertDrawableToByteArray(R.drawable.h37_7);
+            FoodModel food58 = new FoodModel("يخنة لوبياء جافة +فخذة دجاج 70غم", "", img58, 300);
+            long id58 = foodTableOperations.insertFoodData(food58);
+            if (id58 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافة +فخذة دجاج 70غم", "2 مغرفة ارز+نصف كوب يخنه", 500, 30, 30, 20, 0, 0, 0, id58, foodType);
+                success58 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img58_1 = convertDrawableToByteArray(R.drawable.h37_8);
+            FoodModel food58_1 = new FoodModel("يخنة لوبياء جافة +فخذة دجاج 70غم", "", img58_1, 440);
+            long id58_1 = foodTableOperations.insertFoodData(food58_1);
+            if (id58_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافة +فخذة دجاج 70غم", "3 مغارف ارز +نصف كوب يخنه", 550, 40, 30, 20, 0, 0, 0, id58_1, foodType);
+                success58_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img58_2 = convertDrawableToByteArray(R.drawable.h37_9);
+            FoodModel food58_2 = new FoodModel("يخنة لوبياء جافة +فخذة دجاج 70غم", "", img58_2, 550);
+            long id58_2 = foodTableOperations.insertFoodData(food58_2);
+            if (id58_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافة +فخذة دجاج 70غم", "5 مغارف ارز+كوب يخنه", 780, 70, 40, 30, 0, 0, 0, id58_2, foodType);
+                success58_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img59 = convertDrawableToByteArray(R.drawable.h37_10);
+            FoodModel food59 = new FoodModel("يخنة لوبياء جافه+لحمة 90غم", "", img59, 320);
+            long id59 = foodTableOperations.insertFoodData(food59);
+            if (id59 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافه+لحمة 90غم", "2 مغرفة ارز+نصف كوب يخنه", 400, 30, 25, 15, 0, 0, 0, id59, foodType);
+                success59 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img59_1 = convertDrawableToByteArray(R.drawable.h37_11);
+            FoodModel food59_1 = new FoodModel("يخنة لوبياء جافه+لحمة 90غم", "", img59_1, 380);
+            long id59_1 = foodTableOperations.insertFoodData(food59_1);
+            if (id59_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافه+لحمة 90غم", "3 مغارف ارز +نصف كوب يخنه", 450, 40, 25, 15, 0, 0, 0, id59_1, foodType);
+                success59_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img59_2 = convertDrawableToByteArray(R.drawable.h37_12);
+            FoodModel food59_2 = new FoodModel("يخنة لوبياء جافه+لحمة 90غم", "", img59_2, 570);
+            long id59_2 = foodTableOperations.insertFoodData(food59_2);
+            if (id59_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لوبياء جافه+لحمة 90غم", "5 مغارف ارز+كوب يخنه", 670, 70, 35, 25, 0, 0, 0, id59_2, foodType);
+                success59_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img60 = convertDrawableToByteArray(R.drawable.h38_1);
+            FoodModel food60 = new FoodModel("يخنة فاصولياء بيضاء (جافة)", "", img60, 240);
+            long id60 = foodTableOperations.insertFoodData(food60);
+            if (id60 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء (جافة)", "2 مغرفة ارز+نصف كوب يخنه", 250, 30, 10, 6, 0, 0, 0, id60, foodType);
+                success60 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img60_1 = convertDrawableToByteArray(R.drawable.h38_2);
+            FoodModel food60_1 = new FoodModel("يخنة فاصولياء بيضاء (جافة)", "", img60_1, 300);
+            long id60_1 = foodTableOperations.insertFoodData(food60_1);
+            if (id60_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء (جافة)", "3 مغارف ارز +نصف كوب يخنه", 300, 40, 10, 7, 0, 0, 0, id60_1, foodType);
+                success60_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img60_2 = convertDrawableToByteArray(R.drawable.h38_3);
+            FoodModel food60_2 = new FoodModel("يخنة فاصولياء بيضاء (جافة)", "", img60_2, 500);
+            long id60_2 = foodTableOperations.insertFoodData(food60_2);
+            if (id60_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء (جافة)", "5 مغارف ارز+كوب يخنه", 500, 70, 20, 15, 0, 0, 0, id60_2, foodType);
+                success60_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img61 = convertDrawableToByteArray(R.drawable.h38_4);
+            FoodModel food61 = new FoodModel("يخنة فاصولياء بيضاء+صدر دجاج 80غم", "", img61, 320);
+            long id61 = foodTableOperations.insertFoodData(food61);
+            if (id61 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء+صدر دجاج 80غم", "2 مغرفة ارز+نصف كوب يخنه", 500, 30, 30, 20, 0, 0, 0, id61, foodType);
+                success61 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img61_1 = convertDrawableToByteArray(R.drawable.h38_5);
+            FoodModel food61_1 = new FoodModel("يخنة فاصولياء بيضاء+صدر دجاج 80غم", "", img61_1, 380);
+            long id61_1 = foodTableOperations.insertFoodData(food61_1);
+            if (id61_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء+صدر دجاج 80غم", "3 مغارف ارز +نصف كوب يخنه", 550, 40, 30, 20, 0, 0, 0, id61_1, foodType);
+                success61_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img61_2 = convertDrawableToByteArray(R.drawable.h38_6);
+            FoodModel food61_2 = new FoodModel("يخنة فاصولياء بيضاء+صدر دجاج 80غم", "", img61_2, 580);
+            long id61_2 = foodTableOperations.insertFoodData(food61_2);
+            if (id61_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء+صدر دجاج 80غم", "5 مغارف ارز+كوب يخنه", 780, 70, 40, 30, 0, 0, 0, id61_2, foodType);
+                success61_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img62 = convertDrawableToByteArray(R.drawable.h38_7);
+            FoodModel food62 = new FoodModel("يخنة فاصولياء بيضاء+فخذة دجاج70غم", "", img62, 260);
+            long id62 = foodTableOperations.insertFoodData(food62);
+            if (id62 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء+فخذة دجاج70غم", "2 مغرفة ارز+نصف كوب يخنه", 480, 30, 40, 20, 0, 0, 0, id62, foodType);
+                success62 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img62_1 = convertDrawableToByteArray(R.drawable.h38_8);
+            FoodModel food62_1 = new FoodModel("يخنة فاصولياء بيضاء+فخذة دجاج70غم", "", img62_1, 320);
+            long id62_1 = foodTableOperations.insertFoodData(food62_1);
+            if (id62_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء+فخذة دجاج70غم", "3 مغارف ارز +نصف كوب يخنه", 530, 40, 40, 20, 0, 0, 0, id62_1, foodType);
+                success62_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img62_2 = convertDrawableToByteArray(R.drawable.h38_9);
+            FoodModel food62_2 = new FoodModel("يخنة فاصولياء بيضاء+فخذة دجاج70غم", "", img62_2, 500);
+            long id62_2 = foodTableOperations.insertFoodData(food62_2);
+            if (id62_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء+فخذة دجاج70غم", "5 مغارف ارز+كوب يخنه", 750, 70, 50, 25, 0, 0, 0, id62_2, foodType);
+                success62_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img63 = convertDrawableToByteArray(R.drawable.h38_10);
+            FoodModel food63 = new FoodModel("يخنة فاصولياء بيضاء+لحمة 90غم", "", img63, 280);
+            long id63 = foodTableOperations.insertFoodData(food63);
+            if (id63 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء+لحمة 90غم", "2 مغرفة ارز+نصف كوب يخنه", 400, 30, 25, 15, 0, 0, 0, id63, foodType);
+                success63 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img63_1 = convertDrawableToByteArray(R.drawable.h38_11);
+            FoodModel food63_1 = new FoodModel("يخنة فاصولياء بيضاء+لحمة 90غم", "", img63_1, 340);
+            long id63_1 = foodTableOperations.insertFoodData(food63_1);
+            if (id63_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء+لحمة 90غم", "3 مغارف ارز +نصف كوب يخنه", 450, 40, 25, 15, 0, 0, 0, id63_1, foodType);
+                success63_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img63_2 = convertDrawableToByteArray(R.drawable.h38_12);
+            FoodModel food63_2 = new FoodModel("يخنة فاصولياء بيضاء+لحمة 90غم", "", img63_2, 540);
+            long id63_2 = foodTableOperations.insertFoodData(food63_2);
+            if (id63_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة فاصولياء بيضاء+لحمة 90غم", "5 مغارف ارز+كوب يخنه", 650, 70, 35, 25, 0, 0, 0, id63_2, foodType);
+                success63_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img64 = convertDrawableToByteArray(R.drawable.h39_1);
+            FoodModel food64 = new FoodModel("يخنة سبانخ", "", img64, 200);
+            long id64 = foodTableOperations.insertFoodData(food64);
+            if (id64 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ", "2 مغرفة ارز+نصف كوب يخنه", 130, 20, 3.5, 3, 0, 0, 0, id64, foodType);
+                success64 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img64_1 = convertDrawableToByteArray(R.drawable.h39_2);
+            FoodModel food64_1 = new FoodModel("يخنة سبانخ", "", img64_1, 250);
+            long id64_1 = foodTableOperations.insertFoodData(food64_1);
+            if (id64_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ", "3 مغارف ارز +نصف كوب يخنه", 180, 30, 5, 30, 0, 0, 0, id64_1, foodType);
+                success64_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img64_2 = convertDrawableToByteArray(R.drawable.h39_3);
+            FoodModel food64_2 = new FoodModel("يخنة سبانخ", "", img64_2, 440);
+            long id64_2 = foodTableOperations.insertFoodData(food64_2);
+            if (id64_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ", "5 مغارف ارز+كوب يخنه", 300, 50, 9, 35, 0, 0, 0, id64_2, foodType);
+                success64_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img65 = convertDrawableToByteArray(R.drawable.h39_4);
+            FoodModel food65 = new FoodModel("يخنة سبانخ+صدر دجاج80 غم", "", img65, 250);
+            long id65 = foodTableOperations.insertFoodData(food65);
+            if (id65 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ+صدر دجاج80 غم", "2 مغرفة ارز+نصف كوب يخنه", 280, 20, 20, 15, 0, 0, 0, id65, foodType);
+                success65 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img65_1 = convertDrawableToByteArray(R.drawable.h39_5);
+            FoodModel food65_1 = new FoodModel("يخنة سبانخ+صدر دجاج80 غم", "", img65_1, 330);
+            long id65_1 = foodTableOperations.insertFoodData(food65_1);
+            if (id65_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ+صدر دجاج80 غم", "3 مغارف ارز +نصف كوب يخنه", 330, 30, 20, 15, 0, 0, 0, id65_1, foodType);
+                success65_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img65_2 = convertDrawableToByteArray(R.drawable.h39_6);
+            FoodModel food65_2 = new FoodModel("يخنة سبانخ+صدر دجاج80 غم", "", img65_2, 500);
+            long id65_2 = foodTableOperations.insertFoodData(food65_2);
+            if (id65_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ+صدر دجاج80 غم", "5 مغارف ارز+كوب يخنه", 450, 50, 20, 15, 0, 0, 0, id65_2, foodType);
+                success65_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img66 = convertDrawableToByteArray(R.drawable.h39_7);
+            FoodModel food66 = new FoodModel("يخنة سبانخ+فخذة دجاج 70غم", "", img66, 250);
+            long id66 = foodTableOperations.insertFoodData(food66);
+            if (id66 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ+فخذة دجاج 70غم", "2 مغرفة ارز+نصف كوب يخنه", 400, 20, 25, 20, 0, 0, 0, id66, foodType);
+                success66 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img66_1 = convertDrawableToByteArray(R.drawable.h39_8);
+            FoodModel food66_1 = new FoodModel("يخنة سبانخ+فخذة دجاج 70غم", "", img66_1, 320);
+            long id66_1 = foodTableOperations.insertFoodData(food66_1);
+            if (id66_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ+فخذة دجاج 70غم", "3 مغارف ارز +نصف كوب يخنه", 450, 30, 25, 18, 0, 0, 0, id66_1, foodType);
+                success66_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img66_2 = convertDrawableToByteArray(R.drawable.h39_9);
+            FoodModel food66_2 = new FoodModel("يخنة سبانخ+فخذة دجاج 70غم", "", img66_2, 500);
+            long id66_2 = foodTableOperations.insertFoodData(food66_2);
+            if (id66_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ+فخذة دجاج 70غم", "5 مغارف ارز+كوب يخنه", 550, 50, 30, 25, 0, 0, 0, id66_2, foodType);
+                success66_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img67 = convertDrawableToByteArray(R.drawable.h39_10);
+            FoodModel food67 = new FoodModel("يخنة سبانخ +لحمة 90غم", "", img67, 280);
+            long id67 = foodTableOperations.insertFoodData(food67);
+            if (id67 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ +لحمة 90غم", "2 مغرفة ارز+نصف كوب يخنه", 350, 20, 30, 15, 0, 0, 0, id67, foodType);
+                success67 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img67_1 = convertDrawableToByteArray(R.drawable.h39_11);
+            FoodModel food67_1 = new FoodModel("يخنة سبانخ +لحمة 90غم", "", img67_1, 350);
+            long id67_1 = foodTableOperations.insertFoodData(food67_1);
+            if (id67_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ +لحمة 90غم", "3 مغارف ارز +نصف كوب يخنه", 420, 30, 35, 15, 0, 0, 0, id67_1, foodType);
+                success67_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img67_2 = convertDrawableToByteArray(R.drawable.h39_12);
+            FoodModel food67_2 = new FoodModel("يخنة سبانخ +لحمة 90غم", "", img67_2, 500);
+            long id67_2 = foodTableOperations.insertFoodData(food67_2);
+            if (id67_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة سبانخ +لحمة 90غم", "5 مغارف ارز+كوب يخنه", 530, 50, 35, 20, 0, 0, 0, id67_2, foodType);
+                success67_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img68 = convertDrawableToByteArray(R.drawable.h40_1);
+            FoodModel food68 = new FoodModel("يخنة ملوخية", "", img68, 120);
+            long id68 = foodTableOperations.insertFoodData(food68);
+            if (id68 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية", "2 مغرفة ارز+نصف كوب يخنه", 130, 20, 3.5, 3, 0, 0, 0, id68, foodType);
+                success68 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img68_1 = convertDrawableToByteArray(R.drawable.h40_2);
+            FoodModel food68_1 = new FoodModel("يخنة ملوخية", "", img68_1, 120);
+            long id68_1 = foodTableOperations.insertFoodData(food68_1);
+            if (id68_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية", "3 مغارف ارز +نصف كوب يخنه", 180, 30, 4.5, 3, 0, 0, 0, id68_1, foodType);
+                success68_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img68_2 = convertDrawableToByteArray(R.drawable.h40_3);
+            FoodModel food68_2 = new FoodModel("يخنة ملوخية", "", img68_2, 230);
+            long id68_2 = foodTableOperations.insertFoodData(food68_2);
+            if (id68_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية", "5 مغارف ارز+كوب يخنه", 130, 20, 3.5, 3, 0, 0, 0, id68_2, foodType);
+                success68_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img69 = convertDrawableToByteArray(R.drawable.h40_4);
+            FoodModel food69 = new FoodModel("يخنة ملوخية+صدر دجاج 80 غم", "", img69, 250);
+            long id69 = foodTableOperations.insertFoodData(food69);
+            if (id69 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية+صدر دجاج 80 غم", "2 مغرفة ارز+نصف كوب يخنه", 360, 20, 30, 15, 0, 0, 0, id69, foodType);
+                success69 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img69_1 = convertDrawableToByteArray(R.drawable.h40_5);
+            FoodModel food69_1 = new FoodModel("يخنة ملوخية+صدر دجاج 80 غم", "", img69_1, 320);
+            long id69_1 = foodTableOperations.insertFoodData(food69_1);
+            if (id69_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية+صدر دجاج 80 غم", "3 مغارف ارز +نصف كوب يخنه", 420, 30, 35, 15, 0, 0, 0, id69_1, foodType);
+                success69_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img69_2 = convertDrawableToByteArray(R.drawable.h40_6);
+            FoodModel food69_2 = new FoodModel("يخنة ملوخية+صدر دجاج 80 غم", "", img69_2, 460);
+            long id69_2 = foodTableOperations.insertFoodData(food69_2);
+            if (id69_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية+صدر دجاج 80 غم", "5 مغارف ارز+كوب يخنه", 530, 50, 40, 20, 0, 0, 0, id69_2, foodType);
+                success69_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img70 = convertDrawableToByteArray(R.drawable.h40_7);
+            FoodModel food70 = new FoodModel("يخنة ملوخية+فخذة دجاج 70غم", "", img70, 250);
+            long id70 = foodTableOperations.insertFoodData(food70);
+            if (id70 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية+فخذة دجاج 70غم", "2 مغرفة ارز+نصف كوب يخنه", 400, 20, 25, 20, 0, 0, 0, id70, foodType);
+                success70 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img70_1 = convertDrawableToByteArray(R.drawable.h40_8);
+            FoodModel food70_1 = new FoodModel("يخنة ملوخية+فخذة دجاج 70غم", "", img70_1, 300);
+            long id70_1 = foodTableOperations.insertFoodData(food70_1);
+            if (id70_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية+فخذة دجاج 70غم", "3 مغارف ارز +نصف كوب يخنه", 450, 30, 25, 20, 0, 0, 0, id70_1, foodType);
+                success70_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img70_2 = convertDrawableToByteArray(R.drawable.h40_9);
+            FoodModel food70_2 = new FoodModel("يخنة ملوخية+فخذة دجاج 70غم", "", img70_2, 450);
+            long id70_2 = foodTableOperations.insertFoodData(food70_2);
+            if (id70_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية+فخذة دجاج 70غم", "5 مغارف ارز+كوب يخنه", 550, 50, 30, 20, 0, 0, 0, id70_2, foodType);
+                success70_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img71 = convertDrawableToByteArray(R.drawable.h40_10);
+            FoodModel food71 = new FoodModel("يخنة ملوخية+لحمة 90غم", "", img71, 250);
+            long id71 = foodTableOperations.insertFoodData(food71);
+            if (id71 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية+لحمة 90غم", "2 مغرفة ارز+نصف كوب يخنه", 280, 20, 15, 15, 0, 0, 0, id71, foodType);
+                success71 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img71_1 = convertDrawableToByteArray(R.drawable.h40_11);
+            FoodModel food71_1 = new FoodModel("يخنة ملوخية+لحمة 90غم", "", img71_1, 330);
+            long id71_1 = foodTableOperations.insertFoodData(food71_1);
+            if (id71_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية+لحمة 90غم", "3 مغارف ارز +نصف كوب يخنه", 340, 30, 20, 15, 0, 0, 0, id71_1, foodType);
+                success71_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img71_2 = convertDrawableToByteArray(R.drawable.h40_12);
+            FoodModel food71_2 = new FoodModel("يخنة ملوخية+لحمة 90غم", "", img71_2, 450);
+            long id71_2 = foodTableOperations.insertFoodData(food71_2);
+            if (id71_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة ملوخية+لحمة 90غم", "5 مغارف ارز+كوب يخنه", 450, 50, 20, 30, 0, 0, 0, id71_2, foodType);
+                success71_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img72 = convertDrawableToByteArray(R.drawable.h41_1);
+            FoodModel food72 = new FoodModel("خبيزة", "", img72, 80);
+            long id72 = foodTableOperations.insertFoodData(food72);
+            if (id72 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("خبيزة", "نصف كوب", 120, 5, 2, 10, 0, 0, 0, id72, foodType);
+                success72 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img72_1 = convertDrawableToByteArray(R.drawable.h41_2);
+            FoodModel food72_1 = new FoodModel("خبيزة", "", img72_1, 150);
+            long id72_1 = foodTableOperations.insertFoodData(food72_1);
+            if (id72_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("خبيزة", "كوب", 240, 10, 4, 20, 0, 0, 0, id72_1, foodType);
+                success72_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img73 = convertDrawableToByteArray(R.drawable.h42_1);
+            FoodModel food73 = new FoodModel("لوف", "", img73, 120);
+            long id73 = foodTableOperations.insertFoodData(food73);
+            if (id73 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لوف", "نصف كوب", 120, 5, 2, 10, 0, 0, 0, id73, foodType);
+                success73 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img73_1 = convertDrawableToByteArray(R.drawable.h42_2);
+            FoodModel food73_1 = new FoodModel("لوف", "", img73_1, 250);
+            long id73_1 = foodTableOperations.insertFoodData(food73_1);
+            if (id73_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("لوف", "كوب", 240, 10, 4, 20, 0, 0, 0, id73_1, foodType);
+                success73_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img74 = convertDrawableToByteArray(R.drawable.h43_1);
+            FoodModel food74 = new FoodModel("سبانخ حوس", "", img74, 120);
+            long id74 = foodTableOperations.insertFoodData(food74);
+            if (id74 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("سبانخ حوس", "نصف كوب", 120, 5, 2, 10, 0, 0, 0, id74, foodType);
+                success74 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img74_1 = convertDrawableToByteArray(R.drawable.h43_2);
+            FoodModel food74_1 = new FoodModel("سبانخ حوس", "", img74_1, 250);
+            long id74_1 = foodTableOperations.insertFoodData(food74_1);
+            if (id74_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("سبانخ حوس", "كوب", 240, 10, 4, 20, 0, 0, 0, id74_1, foodType);
+                success74_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img75 = convertDrawableToByteArray(R.drawable.h44_1);
+            FoodModel food75 = new FoodModel("مسخن", "", img75, 180);
+            long id75 = foodTableOperations.insertFoodData(food75);
+            if (id75 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مسخن", "ربع رغيف طابون", 440, 50, 5, 20, 0, 0, 0, id75, foodType);
+                success75 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img76 = convertDrawableToByteArray(R.drawable.h44_2);
+            FoodModel food76 = new FoodModel("مسخن مع صدر دجاج 80غم", "", img76, 250);
+            long id76 = foodTableOperations.insertFoodData(food76);
+            if (id76 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مسخن مع صدر دجاج 80غم", "ربع رغيف طابون", 680, 50, 35, 35, 0, 0, 0, id76, foodType);
+                success76 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img77 = convertDrawableToByteArray(R.drawable.h44_3);
+            FoodModel food77 = new FoodModel("مسخن مع فخذة دجاج70غم", "", img77, 300);
+            long id77 = foodTableOperations.insertFoodData(food77);
+            if (id77 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مسخن مع فخذة دجاج70غم", "ربع رغيف طابون", 690, 50, 25, 40, 0, 0, 0, id77, foodType);
+                success77 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img78 = convertDrawableToByteArray(R.drawable.h45);
+            FoodModel food78 = new FoodModel("فطيرة الراعي", "", img78, 230);
+            long id78 = foodTableOperations.insertFoodData(food78);
+            if (id78 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فطيرة الراعي", "1 مغرفة دائرية", 400, 30, 15, 20, 0, 0, 0, id78, foodType);
+                success78 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img79 = convertDrawableToByteArray(R.drawable.h46_1);
+            FoodModel food79 = new FoodModel("2 كبة لبن + ارز", "", img79, 120);
+            long id79 = foodTableOperations.insertFoodData(food79);
+            if (id79 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("2 كبة لبن + ارز", "2 مغرفة ارز+نصف كوب لبن", 350, 35, 15, 15, 0, 0, 0, id79, foodType);
+                success79 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img80 = convertDrawableToByteArray(R.drawable.h46_2);
+            FoodModel food80 = new FoodModel("3 كبة لبن + ارز", "", img80, 200);
+            long id80 = foodTableOperations.insertFoodData(food80);
+            if (id80 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("3 كبة لبن + ارز", "3 مغارف ارز+نصف كوب لبن", 400, 50, 15, 15, 0, 0, 0, id80, foodType);
+                success80 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img81 = convertDrawableToByteArray(R.drawable.h46_3);
+            FoodModel food81 = new FoodModel("4 كبة لبن + ارز", "", img81, 300);
+            long id81 = foodTableOperations.insertFoodData(food81);
+            if (id81 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("4 كبة لبن + ارز", "5 مغارف ارز+كوب لبن", 750, 80, 25, 25, 0, 0, 0, id81, foodType);
+                success81 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img82 = convertDrawableToByteArray(R.drawable.h47_1);
+            FoodModel food82 = new FoodModel("كبة لبن (من الارز و اللحمة)", "", img82, 90);
+            long id82 = foodTableOperations.insertFoodData(food82);
+            if (id82 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبة لبن (من الارز و اللحمة)", "2 قطعة", 200, 15, 10, 10, 0, 0, 0, id82, foodType);
+                success82 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img82_1 = convertDrawableToByteArray(R.drawable.h47_2);
+            FoodModel food82_1 = new FoodModel("كبة لبن (من الارز و اللحمة)", "", img82_1, 180);
+            long id82_1 = foodTableOperations.insertFoodData(food82_1);
+            if (id82_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبة لبن (من الارز و اللحمة)", "4 قطع", 400, 30, 15, 20, 0, 0, 0, id82_1, foodType);
+                success82_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img83 = convertDrawableToByteArray(R.drawable.h48);
+            FoodModel food83 = new FoodModel("فري محشي بالأرز", "", img83, 130);
+            long id83 = foodTableOperations.insertFoodData(food83);
+            if (id83 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فري محشي بالأرز", "حجم صغير كامل", 220, 15, 10, 10, 0, 0, 0, id83, foodType);
+                success83 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img84 = convertDrawableToByteArray(R.drawable.h49);
+            FoodModel food84 = new FoodModel("مشاط", "", img84, 80);
+            long id84 = foodTableOperations.insertFoodData(food84);
+            if (id84 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مشاط", "قطعة متوسطة", 350, 30, 2, 25, 0, 0, 0, id84, foodType);
+                success84 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img85 = convertDrawableToByteArray(R.drawable.h50_1);
+            FoodModel food85 = new FoodModel("صينية كفتة مع خضار", "", img85, 230);
+            long id85 = foodTableOperations.insertFoodData(food85);
+            if (id85 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية كفتة مع خضار", "1 مغرفة دائرية", 550, 15, 40, 30, 0, 0, 0, id85, foodType);
+                success85 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img85_1 = convertDrawableToByteArray(R.drawable.h50_2);
+            FoodModel food85_1 = new FoodModel("صينية كفتة مع خضار", "", img85_1, 350);
+            long id85_1 = foodTableOperations.insertFoodData(food85_1);
+            if (id85_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية كفتة مع خضار", "2 مغرفة دائرية", 750, 10, 60, 50, 0, 0, 0, id85_1, foodType);
+                success85_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img86 = convertDrawableToByteArray(R.drawable.h51_1);
+            FoodModel food86 = new FoodModel("رقاقة و عدس", "", img86, 150);
+            long id86 = foodTableOperations.insertFoodData(food86);
+            if (id86 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("رقاقة و عدس", "نصف كوب", 300, 40, 15, 5, 0, 0, 0, id86, foodType);
+                success86 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img86_1 = convertDrawableToByteArray(R.drawable.h51_2);
+            FoodModel food86_1 = new FoodModel("رقاقة و عدس", "", img86_1, 250);
+            long id86_1 = foodTableOperations.insertFoodData(food86_1);
+            if (id86_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("رقاقة و عدس", "كوب", 500, 80, 20, 10, 0, 0, 0, id86_1, foodType);
+                success86_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img87 = convertDrawableToByteArray(R.drawable.h52_1);
+            FoodModel food87 = new FoodModel("عكوب مع لبن", "", img87, 150);
+            long id87 = foodTableOperations.insertFoodData(food87);
+            if (id87 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("عكوب مع لبن", "2 مغرفة ارز+نصف كوب يخنة", 200, 25, 5, 5, 0, 0, 0, id87, foodType);
+                success87 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img87_1 = convertDrawableToByteArray(R.drawable.h52_2);
+            FoodModel food87_1 = new FoodModel("عكوب مع لبن", "", img87_1, 200);
+            long id87_1 = foodTableOperations.insertFoodData(food87_1);
+            if (id87_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("عكوب مع لبن", "3 مغارف ارز+نصف كوب يخنة", 250, 35, 8, 7, 0, 0, 0, id87_1, foodType);
+                success87_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img87_2 = convertDrawableToByteArray(R.drawable.h52_3);
+            FoodModel food87_2 = new FoodModel("عكوب مع لبن", "", img87_2, 330);
+            long id87_2 = foodTableOperations.insertFoodData(food87_2);
+            if (id87_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("عكوب مع لبن", "5 مغارف ارز+كوب يخنه", 370, 50, 10, 10, 0, 0, 0, id87_2, foodType);
+                success87_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img88 = convertDrawableToByteArray(R.drawable.h52_4);
+            FoodModel food88 = new FoodModel("يخنة لبن وع جوب +صدر دجاج 80غم", "", img88, 250);
+            long id88 = foodTableOperations.insertFoodData(food88);
+            if (id88 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لبن وع جوب +صدر دجاج 80غم", "2 مغرفة ارز+نصف كوب يخنة", 450, 25, 35, 20, 0, 0, 0, id88, foodType);
+                success88 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img88_1 = convertDrawableToByteArray(R.drawable.h52_5);
+            FoodModel food88_1 = new FoodModel("يخنة لبن وع جوب +صدر دجاج 80غم", "", img88_1, 320);
+            long id88_1 = foodTableOperations.insertFoodData(food88_1);
+            if (id88_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لبن وع جوب +صدر دجاج 80غم", "3 مغارف ارز+نصف كوب يخنة", 480, 35, 40, 20, 0, 0, 0, id88_1, foodType);
+                success88_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img88_2 = convertDrawableToByteArray(R.drawable.h52_6);
+            FoodModel food88_2 = new FoodModel("يخنة لبن وع جوب +صدر دجاج 80غم", "", img88_2, 400);
+            long id88_2 = foodTableOperations.insertFoodData(food88_2);
+            if (id88_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لبن وع جوب +صدر دجاج 80غم", "5 مغارف ارز+كوب يخنه", 600, 50, 40, 25, 0, 0, 0, id88_2, foodType);
+                success88_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img89 = convertDrawableToByteArray(R.drawable.h52_7);
+            FoodModel food89 = new FoodModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "", img89, 220);
+            long id89 = foodTableOperations.insertFoodData(food89);
+            if (id89 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "2 مغرفة ارز+نصف كوب يخنة", 450, 25, 30, 20, 0, 0, 0, id89, foodType);
+                success89 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img89_1 = convertDrawableToByteArray(R.drawable.h52_8);
+            FoodModel food89_1 = new FoodModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "", img89_1, 280);
+            long id89_1 = foodTableOperations.insertFoodData(food89_1);
+            if (id89_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "3 مغارف ارز+نصف كوب يخنة", 500, 35, 30, 20, 0, 0, 0, id89_1, foodType);
+                success89_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img89_2 = convertDrawableToByteArray(R.drawable.h52_9);
+            FoodModel food89_2 = new FoodModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "", img89_2, 400);
+            long id89_2 = foodTableOperations.insertFoodData(food89_2);
+            if (id89_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "5 مغارف ارز+كوب يخنه", 630, 50, 30, 25, 0, 0, 0, id89_2, foodType);
+                success89_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img90 = convertDrawableToByteArray(R.drawable.h52_10);
+            FoodModel food90 = new FoodModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "", img90, 250);
+            long id90 = foodTableOperations.insertFoodData(food90);
+            if (id90 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "2 مغرفة ارز+نصف كوب يخنة", 350, 25, 20, 15, 0, 0, 0, id90, foodType);
+                success90 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img90_1 = convertDrawableToByteArray(R.drawable.h52_11);
+            FoodModel food90_1 = new FoodModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "", img90_1, 300);
+            long id90_1 = foodTableOperations.insertFoodData(food90_1);
+            if (id90_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "3 مغارف ارز+نصف كوب يخنة", 400, 35, 20, 15, 0, 0, 0, id90_1, foodType);
+                success90_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img90_2 = convertDrawableToByteArray(R.drawable.h52_12);
+            FoodModel food90_2 = new FoodModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "", img90_2, 400);
+            long id90_2 = foodTableOperations.insertFoodData(food90_2);
+            if (id90_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("يخنة لبن و عكوب +فخذة دجاج 70غم", "5 مغارف ارز+كوب يخنه", 500, 70, 25, 20, 0, 0, 0, id90_2, foodType);
+                success90_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img91 = convertDrawableToByteArray(R.drawable.h53);
+            FoodModel food91 = new FoodModel("وجبة سمك مقطع", "", img91, 500);
+            long id91 = foodTableOperations.insertFoodData(food91);
+            if (id91 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("وجبة سمك مقطع", "سمكة متوسطة كوب ارز", 550, 50, 15, 20, 0, 0, 0, id91, foodType);
+                success91 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img92 = convertDrawableToByteArray(R.drawable.h54);
+            FoodModel food92 = new FoodModel("وجبة سمكة كاملة", "", img92, 480);
+            long id92 = foodTableOperations.insertFoodData(food92);
+            if (id92 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("وجبة سمكة كاملة", "سمكة متوسطة+رغيف خبز 60غم+نصف كوب بطاطا مقلية", 450, 60, 25, 25, 0, 0, 0, id92, foodType);
+                success92 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img93 = convertDrawableToByteArray(R.drawable.h56);
+            FoodModel food93 = new FoodModel("سمكة دنيس محشية", "", img93, 300);
+            long id93 = foodTableOperations.insertFoodData(food93);
+            if (id93 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("سمكة دنيس محشية", "متوسطة الحجم", 350, 5, 30, 20, 0, 0, 0, id93, foodType);
+                success93 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img94 = convertDrawableToByteArray(R.drawable.h57_1);
+            FoodModel food94 = new FoodModel("معكرونة سباغيتي بالخضار", "", img94, 90);
+            long id94 = foodTableOperations.insertFoodData(food94);
+            if (id94 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("معكرونة سباغيتي بالخضار", "2 مغرفة ارز", 150, 20, 2, 5, 0, 0, 0, id94, foodType);
+                success94 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img94_1 = convertDrawableToByteArray(R.drawable.h57_2);
+            FoodModel food94_1 = new FoodModel("معكرونة سباغيتي بالخضار", "", img94_1, 140);
+            long id94_1 = foodTableOperations.insertFoodData(food94_1);
+            if (id94_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("معكرونة سباغيتي بالخضار", "3 مغارف ارز", 220, 25, 2.5, 10, 0, 0, 0, id94_1, foodType);
+                success94_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img94_2 = convertDrawableToByteArray(R.drawable.h57_3);
+            FoodModel food94_2 = new FoodModel("معكرونة سباغيتي بالخضار", "", img94_2, 200);
+            long id94_2 = foodTableOperations.insertFoodData(food94_2);
+            if (id94_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("معكرونة سباغيتي بالخضار", "5 مغارف ارز", 350, 40, 4, 15, 0, 0, 0, id94_2, foodType);
+                success94_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+
+            //الوجبات الرئيسية 2
+            byte[] img95 = convertDrawableToByteArray(R.drawable.h58_1);
+            FoodModel food95 = new FoodModel("منسف لبن", "", img95, 185);
+            long id95 = foodTableOperations.insertFoodData(food95);
+            if (id95 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن", "2 مغرفة أرز+ نصف كوب لبن", 250, 15, 15, 15, 0, 0, 0, id95, foodType);
+                success95 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img95_1 = convertDrawableToByteArray(R.drawable.h58_2);
+            FoodModel food95_1 = new FoodModel("منسف لبن", "", img95_1, 250);
+            long id95_1 = foodTableOperations.insertFoodData(food95_1);
+            if (id95_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن", "3 مغارف ارز + نصف كوب لبن", 320, 20, 15, 15, 0, 0, 0, id95_1, foodType);
+                success95_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img95_2 = convertDrawableToByteArray(R.drawable.h58_3);
+            FoodModel food95_2 = new FoodModel("منسف لبن", "", img95_2, 380);
+            long id95_2 = foodTableOperations.insertFoodData(food95_2);
+            if (id95_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن", "5 مغارف أرز+ كوب لبن", 600, 40, 30, 30, 0, 0, 0, id95_2, foodType);
+                success95_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img96 = convertDrawableToByteArray(R.drawable.h58_4);
+            FoodModel food96 = new FoodModel("منسف لبن+ صدر دجاج", "", img96, 260);
+            long id96 = foodTableOperations.insertFoodData(food96);
+            if (id96 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن+ صدر دجاج", "2 مغرفة أرز+ نصف كوب لبن", 480, 15, 45, 30, 0, 0, 0, id96, foodType);
+                success96 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img96_1 = convertDrawableToByteArray(R.drawable.h58_5);
+            FoodModel food96_1 = new FoodModel("منسف لبن+ صدر دجاج", "", img96_1, 330);
+            long id96_1 = foodTableOperations.insertFoodData(food96_1);
+            if (id96_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن+ صدر دجاج", "3 مغارف ارز + نصف كوب لبن", 550, 25, 45, 30, 0, 0, 0, id96_1, foodType);
+                success96_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img96_2 = convertDrawableToByteArray(R.drawable.h58_6);
+            FoodModel food96_2 = new FoodModel("منسف لبن+ صدر دجاج", "", img96_2, 460);
+            long id96_2 = foodTableOperations.insertFoodData(food96_2);
+            if (id96_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن+ صدر دجاج", "5 مغارف أرز+ كوب لبن", 800, 40, 60, 45, 0, 0, 0, id96_2, foodType);
+                success96_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img97 = convertDrawableToByteArray(R.drawable.h58_7);
+            FoodModel food97 = new FoodModel("منسف لبن+ فخذة دجاج", "", img97, 255);
+            long id97 = foodTableOperations.insertFoodData(food97);
+            if (id97 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن+ فخذة دجاج", "2 مغرفة أرز+ نصف كوب لبن", 480, 15, 35, 30, 0, 0, 0, id97, foodType);
+                success97 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img97_1 = convertDrawableToByteArray(R.drawable.h58_8);
+            FoodModel food97_1 = new FoodModel("منسف لبن+ فخذة دجاج", "", img97_1, 320);
+            long id97_1 = foodTableOperations.insertFoodData(food97_1);
+            if (id97_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن+ فخذة دجاج", "3 مغارف ارز + نصف كوب لبن", 570, 25, 40, 30, 0, 0, 0, id97_1, foodType);
+                success97_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img97_2 = convertDrawableToByteArray(R.drawable.h58_9);
+            FoodModel food97_2 = new FoodModel("منسف لبن+ فخذة دجاج", "", img97_2, 450);
+            long id97_2 = foodTableOperations.insertFoodData(food97_2);
+            if (id97_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن+ فخذة دجاج", "5 مغارف أرز+ كوب لبن", 850, 40, 50, 45, 0, 0, 0, id97_2, foodType);
+                success97_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img98 = convertDrawableToByteArray(R.drawable.h58_10);
+            FoodModel food98 = new FoodModel("منسف لبن+ قطعة لحمة", "", img98, 265);
+            long id98 = foodTableOperations.insertFoodData(food98);
+            if (id98 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن+ قطعة لحمة", "2 مغرفة أرز+ نصف كوب لبن", 280, 15, 30, 25, 0, 0, 0, id98, foodType);
+                success98 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img98_1 = convertDrawableToByteArray(R.drawable.h58_11);
+            FoodModel food98_1 = new FoodModel("منسف لبن+ قطعة لحمة", "", img98_1, 330);
+            long id98_1 = foodTableOperations.insertFoodData(food98_1);
+            if (id98_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن+ قطعة لحمة", "3 مغارف ارز + نصف كوب لبن", 450, 20, 30, 25, 0, 0, 0, id98_1, foodType);
+                success98_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img98_2 = convertDrawableToByteArray(R.drawable.h58_12);
+            FoodModel food98_2 = new FoodModel("منسف لبن+ قطعة لحمة", "", img98_2, 460);
+            long id98_2 = foodTableOperations.insertFoodData(food98_2);
+            if (id98_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف لبن+ قطعة لحمة", "5 مغارف أرز+ كوب لبن", 750, 35, 45, 40, 0, 0, 0, id98_2, foodType);
+                success98_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img99 = convertDrawableToByteArray(R.drawable.h59_1);
+            FoodModel food99 = new FoodModel("كبسة", "", img99, 70);
+            long id99 = foodTableOperations.insertFoodData(food99);
+            if (id99 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة", "2 مغرفة ارز +ربع كوب صلصة", 130, 15, 2, 5, 0, 0, 0, id99, foodType);
+                success99 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img99_1 = convertDrawableToByteArray(R.drawable.h59_2);
+            FoodModel food99_1 = new FoodModel("كبسة", "", img99_1, 120);
+            long id99_1 = foodTableOperations.insertFoodData(food99_1);
+            if (id99_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة", "3 مغرفة ارز +ربع كوب صلصة", 200, 30, 3, 6, 0, 0, 0, id99_1, foodType);
+                success99_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img99_2 = convertDrawableToByteArray(R.drawable.h59_3);
+            FoodModel food99_2 = new FoodModel("كبسة", "", img99_2, 160);
+            long id99_2 = foodTableOperations.insertFoodData(food99_2);
+            if (id99_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة", "5 مغرفة ارز +ربع كوب صلصة", 330, 45, 5, 10, 0, 0, 0, id99_2, foodType);
+                success99_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img100 = convertDrawableToByteArray(R.drawable.h59_4);
+            FoodModel food100 = new FoodModel("كبسة+صدر دجاج", "", img100, 150);
+            long id100 = foodTableOperations.insertFoodData(food100);
+            if (id100 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة+صدر دجاج", "2 مغرفة ارز +ربع كوب صلصة", 350, 15, 30, 20, 0, 0, 0, id100, foodType);
+                success100 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img100_1 = convertDrawableToByteArray(R.drawable.h59_5);
+            FoodModel food100_1 = new FoodModel("كبسة+صدر دجاج", "", img100_1, 200);
+            long id100_1 = foodTableOperations.insertFoodData(food100_1);
+            if (id100_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة+صدر دجاج", "3 مغرفة ارز +ربع كوب صلصة", 400, 30, 35, 20, 0, 0, 0, id100_1, foodType);
+                success100_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img100_2 = convertDrawableToByteArray(R.drawable.h59_6);
+            FoodModel food100_2 = new FoodModel("كبسة+صدر دجاج", "", img100_2, 250);
+            long id100_2 = foodTableOperations.insertFoodData(food100_2);
+            if (id100_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة+صدر دجاج", "5 مغرفة ارز +ربع كوب صلصة", 560, 45, 35, 25, 0, 0, 0, id100_2, foodType);
+                success100_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img101 = convertDrawableToByteArray(R.drawable.h59_7);
+            FoodModel food101 = new FoodModel("كبسة+فخذة دجاج", "", img101, 140);
+            long id101 = foodTableOperations.insertFoodData(food101);
+            if (id101 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة+فخذة دجاج", "2 مغرفة ارز +ربع كوب صلصة", 280, 15, 25, 20, 0, 0, 0, id101, foodType);
+                success101 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img101_1 = convertDrawableToByteArray(R.drawable.h59_8);
+            FoodModel food101_1 = new FoodModel("كبسة+فخذة دجاج", "", img101_1, 200);
+            long id101_1 = foodTableOperations.insertFoodData(food101_1);
+            if (id101_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة+فخذة دجاج", "3 مغرفة ارز +ربع كوب صلصة", 350, 30, 25, 20, 0, 0, 0, id101_1, foodType);
+                success101_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img101_2 = convertDrawableToByteArray(R.drawable.h59_9);
+            FoodModel food101_2 = new FoodModel("كبسة+فخذة دجاج", "", img101_2, 250);
+            long id101_2 = foodTableOperations.insertFoodData(food101_2);
+            if (id101_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة+فخذة دجاج", "5 مغرفة ارز +ربع كوب صلصة", 480, 45, 25, 25, 0, 0, 0, id101_2, foodType);
+                success101_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img102 = convertDrawableToByteArray(R.drawable.h59_10);
+            FoodModel food102 = new FoodModel("كبسة+قطعة لحم", "", img102, 150);
+            long id102 = foodTableOperations.insertFoodData(food102);
+            if (id102 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة+قطعة لحم", "2 مغرفة ارز +ربع كوب صلصة", 280, 15, 15, 15, 0, 0, 0, id102, foodType);
+                success102 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img102_1 = convertDrawableToByteArray(R.drawable.h59_11);
+            FoodModel food102_1 = new FoodModel("كبسة+قطعة لحم", "", img102_1, 200);
+            long id102_1 = foodTableOperations.insertFoodData(food102_1);
+            if (id102_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة+قطعة لحم", "3 مغرفة ارز +ربع كوب صلصة", 350, 30, 15, 15, 0, 0, 0, id102_1, foodType);
+                success102_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img102_2 = convertDrawableToByteArray(R.drawable.h59_12);
+            FoodModel food102_2 = new FoodModel("كبسة+قطعة لحم", "", img102_2, 250);
+            long id102_2 = foodTableOperations.insertFoodData(food102_2);
+            if (id102_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كبسة+قطعة لحم", "5 مغرفة ارز +ربع كوب صلصة", 480, 45, 20, 20, 0, 0, 0, id102_2, foodType);
+                success102_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img103 = convertDrawableToByteArray(R.drawable.h60_1);
+            FoodModel food103 = new FoodModel("مقلوبة", "", img103, 80);
+            long id103 = foodTableOperations.insertFoodData(food103);
+            if (id103 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مقلوبة", "2 مغرفة ارز", 200, 20, 2, 10, 0, 0, 0, id103, foodType);
+                success103 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img103_1 = convertDrawableToByteArray(R.drawable.h60_2);
+            FoodModel food103_1 = new FoodModel("مقلوبة", "", img103_1, 120);
+            long id103_1 = foodTableOperations.insertFoodData(food103_1);
+            if (id103_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مقلوبة", "3 مغرفة ارز", 300, 30, 4, 15, 0, 0, 0, id103_1, foodType);
+                success103_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img103_2 = convertDrawableToByteArray(R.drawable.h60_3);
+            FoodModel food103_2 = new FoodModel("مقلوبة", "", img103_2, 180);
+            long id103_2 = foodTableOperations.insertFoodData(food103_2);
+            if (id103_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مقلوبة", "5 مغرفة ارز", 430, 50, 6, 20, 0, 0, 0, id103_2, foodType);
+                success103_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img104 = convertDrawableToByteArray(R.drawable.h60_4);
+            FoodModel food104 = new FoodModel("مقلوبة +صدر دجاج", "", img104, 160);
+            long id104 = foodTableOperations.insertFoodData(food104);
+            if (id104 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مقلوبة +صدر دجاج", "2 مغرفة ارز + نصف كوب لبن", 450, 25, 30, 25, 0, 0, 0, id104, foodType);
+                success104 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img104_1 = convertDrawableToByteArray(R.drawable.h60_5);
+            FoodModel food104_1 = new FoodModel("مقلوبة +صدر دجاج", "", img104_1, 200);
+            long id104_1 = foodTableOperations.insertFoodData(food104_1);
+            if (id104_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مقلوبة +صدر دجاج", "3 مغرفة ارز + نصف كوب لبن", 540, 30, 35, 30, 0, 0, 0, id104_1, foodType);
+                success104_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img104_2 = convertDrawableToByteArray(R.drawable.h60_6);
+            FoodModel food104_2 = new FoodModel("مقلوبة +صدر دجاج", "", img104_2, 260);
+            long id104_2 = foodTableOperations.insertFoodData(food104_2);
+            if (id104_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مقلوبة +صدر دجاج", "5 مغرفة ارز + نصف كوب لبن", 670, 50, 40, 35, 0, 0, 0, id104_2, foodType);
+                success104_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img105 = convertDrawableToByteArray(R.drawable.h60_7);
+            FoodModel food105 = new FoodModel("مقلوبة +فخذة دجاج", "", img105, 150);
+            long id105 = foodTableOperations.insertFoodData(food105);
+            if (id105 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مقلوبة +فخذة دجاج", "2 مغرفة ارز + نصف كوب لبن", 450, 25, 25, 15, 0, 0, 0, id105, foodType);
+                success105 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img105_1 = convertDrawableToByteArray(R.drawable.h60_8);
+            FoodModel food105_1 = new FoodModel("مقلوبة +فخذة دجاج", "", img105_1, 190);
+            long id105_1 = foodTableOperations.insertFoodData(food105_1);
+            if (id105_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مقلوبة +فخذة دجاج", "3 مغرفة ارز + نصف كوب لبن", 550, 30, 25, 30, 0, 0, 0, id105_1, foodType);
+                success105_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img105_2 = convertDrawableToByteArray(R.drawable.h60_9);
+            FoodModel food105_2 = new FoodModel("مقلوبة +فخذة دجاج", "", img105_2, 250);
+            long id105_2 = foodTableOperations.insertFoodData(food105_2);
+            if (id105_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مقلوبة +فخذة دجاج", "5 مغرفة ارز + نصف كوب لبن", 700, 70, 30, 35, 0, 0, 0, id105_2, foodType);
+                success105_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img106 = convertDrawableToByteArray(R.drawable.h61_1);
+            FoodModel food106 = new FoodModel("أوزي", "", img106, 60);
+            long id106 = foodTableOperations.insertFoodData(food106);
+            if (id106 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أوزي", "2 مغرفة ارز", 130, 15, 1.5, 5, 0, 0, 0, id106, foodType);
+                success106 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img106_1 = convertDrawableToByteArray(R.drawable.h61_2);
+            FoodModel food106_1 = new FoodModel("أوزي", "", img106_1, 120);
+            long id106_1 = foodTableOperations.insertFoodData(food106_1);
+            if (id106_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أوزي", "3 مغرفة ارز", 200, 25, 2.5, 8, 0, 0, 0, id106_1, foodType);
+                success106_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img106_2 = convertDrawableToByteArray(R.drawable.h61_3);
+            FoodModel food106_2 = new FoodModel("أوزي", "", img106_2, 170);
+            long id106_2 = foodTableOperations.insertFoodData(food106_2);
+            if (id106_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أوزي", "5 مغارف ارز", 320, 40, 4, 10, 0, 0, 0, id106_2, foodType);
+                success106_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img107 = convertDrawableToByteArray(R.drawable.h61_4);
+            FoodModel food107 = new FoodModel("أوزي+صدر دجاج", "", img107, 140);
+            long id107 = foodTableOperations.insertFoodData(food107);
+            if (id107 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أوزي+صدر دجاج", "2 مغرفة ارز", 350, 15, 30, 20, 0, 0, 0, id107, foodType);
+                success107 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img107_1 = convertDrawableToByteArray(R.drawable.h61_5);
+            FoodModel food107_1 = new FoodModel("أوزي+صدر دجاج", "", img107_1, 200);
+            long id107_1 = foodTableOperations.insertFoodData(food107_1);
+            if (id107_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أوزي+صدر دجاج", "3 مغرفة ارز", 450, 25, 30, 20, 0, 0, 0, id107_1, foodType);
+                success107_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img107_2 = convertDrawableToByteArray(R.drawable.h61_5);
+            FoodModel food107_2 = new FoodModel("أوزي+صدر دجاج", "", img107_2, 250);
+            long id107_2 = foodTableOperations.insertFoodData(food107_2);
+            if (id107_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أوزي+صدر دجاج", "5 مغارف ارز", 550, 40, 35, 25, 0, 0, 0, id107_2, foodType);
+                success107_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img108 = convertDrawableToByteArray(R.drawable.h61_7);
+            FoodModel food108 = new FoodModel("أوزي", "", img108, 140);
+            long id108 = foodTableOperations.insertFoodData(food108);
+            if (id108 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أوزي", "2 مغرفة ارز", 380, 15, 20, 20, 0, 0, 0, id108, foodType);
+                success108 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img108_1 = convertDrawableToByteArray(R.drawable.h61_8);
+            FoodModel food108_1 = new FoodModel("أوزي", "", img108_1, 200);
+            long id108_1 = foodTableOperations.insertFoodData(food108_1);
+            if (id108_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أوزي", "3 مغرفة ارز", 450, 25, 25, 25, 0, 0, 0, id108_1, foodType);
+                success108_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img108_2 = convertDrawableToByteArray(R.drawable.h61_9);
+            FoodModel food108_2 = new FoodModel("أوزي", "", img108_2, 250);
+            long id108_2 = foodTableOperations.insertFoodData(food108_2);
+            if (id108_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("أوزي", "5 مغارف ارز", 570, 40, 25, 25, 0, 0, 0, id108_2, foodType);
+                success108_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img109 = convertDrawableToByteArray(R.drawable.h62_1);
+            FoodModel food109 = new FoodModel("قدرة الشمال", "", img109, 70);
+            long id109 = foodTableOperations.insertFoodData(food109);
+            if (id109 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال", "2 مغرفة ارز", 130, 15, 1.5, 6, 0, 0, 0, id109, foodType);
+                success109 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img109_1 = convertDrawableToByteArray(R.drawable.h62_2);
+            FoodModel food109_1 = new FoodModel("قدرة الشمال", "", img109_1, 120);
+            long id109_1 = foodTableOperations.insertFoodData(food109_1);
+            if (id109_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال", "3 مغرفة ارز", 200, 25, 3, 8, 0, 0, 0, id109_1, foodType);
+                success109_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img109_2 = convertDrawableToByteArray(R.drawable.h62_3);
+            FoodModel food109_2 = new FoodModel("قدرة الشمال", "", img109_2, 160);
+            long id109_2 = foodTableOperations.insertFoodData(food109_2);
+            if (id109_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال", "5 مغارف ارز", 300, 40, 4, 10, 0, 0, 0, id109_2, foodType);
+                success109_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img110 = convertDrawableToByteArray(R.drawable.h62_4);
+            FoodModel food110 = new FoodModel("قدرة الشمال+ صدر دجاج", "", img110, 150);
+            long id110 = foodTableOperations.insertFoodData(food110);
+            if (id110 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ صدر دجاج", "2 مغرفة ارز", 350, 15, 30, 20, 0, 0, 0, id110, foodType);
+                success110 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img110_1 = convertDrawableToByteArray(R.drawable.h62_5);
+            FoodModel food110_1 = new FoodModel("قدرة الشمال+ صدر دجاج", "", img110_1, 200);
+            long id110_1 = foodTableOperations.insertFoodData(food110_1);
+            if (id110_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ صدر دجاج", "3 مغرفة ارز", 430, 25, 30, 20, 0, 0, 0, id110_1, foodType);
+                success110_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img110_2 = convertDrawableToByteArray(R.drawable.h62_6);
+            FoodModel food110_2 = new FoodModel("قدرة الشمال+ صدر دجاج", "", img110_2, 250);
+            long id110_2 = foodTableOperations.insertFoodData(food110_2);
+            if (id110_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ صدر دجاج", "5 مغارف ارز", 550, 40, 35, 25, 0, 0, 0, id110_2, foodType);
+                success110_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img111 = convertDrawableToByteArray(R.drawable.h62_7);
+            FoodModel food111 = new FoodModel("قدرة الشمال+ فخذة دجاج", "", img111, 150);
+            long id111 = foodTableOperations.insertFoodData(food111);
+            if (id111 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ فخذة دجاج", "2 مغرفة ارز", 380, 15, 20, 20, 0, 0, 0, id111, foodType);
+                success111 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img111_1 = convertDrawableToByteArray(R.drawable.h62_8);
+            FoodModel food111_1 = new FoodModel("قدرة الشمال+ فخذة دجاج", "", img111_1, 200);
+            long id111_1 = foodTableOperations.insertFoodData(food111_1);
+            if (id111_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ فخذة دجاج", "3 مغرفة ارز", 450, 25, 25, 25, 0, 0, 0, id111_1, foodType);
+                success111_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img111_2 = convertDrawableToByteArray(R.drawable.h62_9);
+            FoodModel food111_2 = new FoodModel("قدرة الشمال+ فخذة دجاج", "", img111_2, 250);
+            long id111_2 = foodTableOperations.insertFoodData(food111_2);
+            if (id111_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ فخذة دجاج", "5 مغارف ارز", 560, 40, 25, 25, 0, 0, 0, id111_2, foodType);
+                success111_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img112 = convertDrawableToByteArray(R.drawable.h62_10);
+            FoodModel food112 = new FoodModel("قدرة الشمال+ قطعة لحمة", "", img112, 140);
+            long id112 = foodTableOperations.insertFoodData(food112);
+            if (id112 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ قطعة لحمة", "2 مغرفة ارز", 180, 15, 15, 15, 0, 0, 0, id112, foodType);
+                success112 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img112_1 = convertDrawableToByteArray(R.drawable.h62_11);
+            FoodModel food112_1 = new FoodModel("قدرة الشمال+ قطعة لحمة", "", img112_1, 190);
+            long id112_1 = foodTableOperations.insertFoodData(food112_1);
+            if (id112_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ قطعة لحمة", "3 مغرفة ارز", 350, 25, 15, 20, 0, 0, 0, id112_1, foodType);
+                success112_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img112_2 = convertDrawableToByteArray(R.drawable.h62_12);
+            FoodModel food112_2 = new FoodModel("قدرة الشمال+ قطعة لحمة", "", img112_2, 230);
+            long id112_2 = foodTableOperations.insertFoodData(food112_2);
+            if (id112_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ قطعة لحمة", "5 مغارف ارز", 450, 40, 20, 20, 0, 0, 0, id112_2, foodType);
+                success112_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img113 = convertDrawableToByteArray(R.drawable.h62_10);
+            FoodModel food113 = new FoodModel("قدرة الشمال+ قطعة لحمة", "", img113, 140);
+            long id113 = foodTableOperations.insertFoodData(food113);
+            if (id113 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ قطعة لحمة", "2 مغرفة ارز", 180, 15, 15, 15, 0, 0, 0, id113, foodType);
+                success113 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img113_1 = convertDrawableToByteArray(R.drawable.h62_11);
+            FoodModel food113_1 = new FoodModel("قدرة الشمال+ قطعة لحمة", "", img113_1, 190);
+            long id113_1 = foodTableOperations.insertFoodData(food113_1);
+            if (id113_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ قطعة لحمة", "3 مغرفة ارز", 350, 25, 15, 20, 0, 0, 0, id113_1, foodType);
+                success113_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img113_2 = convertDrawableToByteArray(R.drawable.h62_12);
+            FoodModel food113_2 = new FoodModel("قدرة الشمال+ قطعة لحمة", "", img113_2, 230);
+            long id113_2 = foodTableOperations.insertFoodData(food113_2);
+            if (id113_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("قدرة الشمال+ قطعة لحمة", "5 مغارف ارز", 450, 40, 20, 20, 0, 0, 0, id113_2, foodType);
+                success113_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img114 = convertDrawableToByteArray(R.drawable.h63_1);
+            FoodModel food114 = new FoodModel("مندي", "", img114, 60);
+            long id114 = foodTableOperations.insertFoodData(food114);
+            if (id114 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي", "2 مغرفة أرز+ نصف كوب صلصة", 130, 15, 2, 5, 0, 0, 0, id114, foodType);
+                success114 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img114_1 = convertDrawableToByteArray(R.drawable.h63_2);
+            FoodModel food114_1 = new FoodModel("مندي", "", img114_1, 120);
+            long id114_1 = foodTableOperations.insertFoodData(food114_1);
+            if (id114_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي", "3مغارف أرز+ نصف كوب صلصة", 200, 25, 3, 8, 0, 0, 0, id114_1, foodType);
+                success114_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img114_2 = convertDrawableToByteArray(R.drawable.h63_3);
+            FoodModel food114_2 = new FoodModel("مندي", "", img114_2, 150);
+            long id114_2 = foodTableOperations.insertFoodData(food114_2);
+            if (id114_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي", "5مغارف أرز+ نصف كوب صلصة", 300, 40, 4, 10, 0, 0, 0, id114_2, foodType);
+                success114_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img115 = convertDrawableToByteArray(R.drawable.h63_4);
+            FoodModel food115 = new FoodModel("مندي + صدر دجاج", "", img115, 140);
+            long id115 = foodTableOperations.insertFoodData(food115);
+            if (id115 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي + صدر دجاج", "2 مغرفة أرز+ صلصة", 380, 15, 25, 20, 0, 0, 0, id115, foodType);
+                success115 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img115_1 = convertDrawableToByteArray(R.drawable.h63_5);
+            FoodModel food115_1 = new FoodModel("مندي + صدر دجاج", "", img115_1, 200);
+            long id115_1 = foodTableOperations.insertFoodData(food115_1);
+            if (id115_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي + صدر دجاج", "3مغارف أرز+ نصف كوب صلصة", 430, 25, 30, 20, 0, 0, 0, id115_1, foodType);
+                success115_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img115_2 = convertDrawableToByteArray(R.drawable.h63_6);
+            FoodModel food115_2 = new FoodModel("مندي + صدر دجاج", "", img115_2, 300);
+            long id115_2 = foodTableOperations.insertFoodData(food115_2);
+            if (id115_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي + صدر دجاج", "5مغارف أرز+ نصف كوب صلصة", 530, 40, 35, 20, 0, 0, 0, id115_2, foodType);
+                success115_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img116 = convertDrawableToByteArray(R.drawable.h63_7);
+            FoodModel food116 = new FoodModel("مندي + فخذة دجاج", "", img116, 130);
+            long id116 = foodTableOperations.insertFoodData(food116);
+            if (id116 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي + فخذة دجاج", "2 مغرفة أرز+ نصف كوب صلصة", 370, 15, 25, 15, 0, 0, 0, id116, foodType);
+                success116 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img116_1 = convertDrawableToByteArray(R.drawable.h63_8);
+            FoodModel food116_1 = new FoodModel("مندي + فخذة دجاج", "", img116_1, 200);
+            long id116_1 = foodTableOperations.insertFoodData(food116_1);
+            if (id116_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي + فخذة دجاج", "3مغارف أرز+ نصف كوب صلصة", 420, 25, 25, 20, 0, 0, 0, id116_1, foodType);
+                success116_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img116_2 = convertDrawableToByteArray(R.drawable.h63_9);
+            FoodModel food116_2 = new FoodModel("مندي + فخذة دجاج", "", img116_2, 230);
+            long id116_2 = foodTableOperations.insertFoodData(food116_2);
+            if (id116_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي + فخذة دجاج", "5مغارف أرز+ نصف كوب صلصة", 550, 40, 25, 20, 0, 0, 0, id116_2, foodType);
+                success116_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img117 = convertDrawableToByteArray(R.drawable.h63_10);
+            FoodModel food117 = new FoodModel("مندي + قطعة لحمة", "", img117, 140);
+            long id117 = foodTableOperations.insertFoodData(food117);
+            if (id117 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي + قطعة لحمة", "2 مغرفة أرز+ نصف كوب صلصة", 280, 15, 15, 15, 0, 0, 0, id117, foodType);
+                success117 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img117_1 = convertDrawableToByteArray(R.drawable.h63_11);
+            FoodModel food117_1 = new FoodModel("مندي + قطعة لحمة", "", img117_1, 200);
+            long id117_1 = foodTableOperations.insertFoodData(food117_1);
+            if (id117_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي + قطعة لحمة", "3مغارف أرز+ نصف كوب صلصة", 340, 25, 15, 15, 0, 0, 0, id117_1, foodType);
+                success117_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img117_2 = convertDrawableToByteArray(R.drawable.h63_12);
+            FoodModel food117_2 = new FoodModel("مندي + قطعة لحمة", "", img117_2, 230);
+            long id117_2 = foodTableOperations.insertFoodData(food117_2);
+            if (id117_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مندي + قطعة لحمة", "5مغارف أرز+ نصف كوب صلصة", 450, 40, 20, 15, 0, 0, 0, id117_2, foodType);
+                success117_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img118 = convertDrawableToByteArray(R.drawable.h64_1);
+            FoodModel food118 = new FoodModel("برياني", "", img118, 60);
+            long id118 = foodTableOperations.insertFoodData(food118);
+            if (id118 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("برياني", "2 مغرفة أرز", 130, 15, 1.5, 5, 0, 0, 0, id118, foodType);
+                success118 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img118_1 = convertDrawableToByteArray(R.drawable.h64_2);
+            FoodModel food118_1 = new FoodModel("برياني", "", img118_1, 100);
+            long id118_1 = foodTableOperations.insertFoodData(food118_1);
+            if (id118_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("برياني", "3مغارف أرز", 200, 25, 2, 8, 0, 0, 0, id118_1, foodType);
+                success118_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img118_2 = convertDrawableToByteArray(R.drawable.h64_3);
+            FoodModel food118_2 = new FoodModel("برياني", "", img118_2, 150);
+            long id118_2 = foodTableOperations.insertFoodData(food118_2);
+            if (id118_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("برياني", "5مغارف أرز", 300, 40, 1, 15, 0, 0, 0, id118_2, foodType);
+                success118_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img119 = convertDrawableToByteArray(R.drawable.h64_4);
+            FoodModel food119 = new FoodModel("برياني + صدر دجاج", "", img119, 140);
+            long id119 = foodTableOperations.insertFoodData(food119);
+            if (id119 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("برياني + صدر دجاج", "2 مغرفة أرز", 350, 15, 30, 20, 0, 0, 0, id119, foodType);
+                success119 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img119_1 = convertDrawableToByteArray(R.drawable.h64_5);
+            FoodModel food119_1 = new FoodModel("برياني + صدر دجاج", "", img119_1, 180);
+            long id119_1 = foodTableOperations.insertFoodData(food119_1);
+            if (id119_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("برياني + صدر دجاج", "3مغارف أرز", 430, 25, 30, 20, 0, 0, 0, id119_1, foodType);
+                success119_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img119_2 = convertDrawableToByteArray(R.drawable.h64_6);
+            FoodModel food119_2 = new FoodModel("برياني + صدر دجاج", "", img119_2, 230);
+            long id119_2 = foodTableOperations.insertFoodData(food119_2);
+            if (id119_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("برياني + صدر دجاج", "5مغارف أرز", 550, 80, 70, 30, 0, 0, 0, id119_2, foodType);
+                success119_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img120 = convertDrawableToByteArray(R.drawable.h64_7);
+            FoodModel food120 = new FoodModel("برياني + فخذة دجاج", "", img120, 130);
+            long id120 = foodTableOperations.insertFoodData(food120);
+            if (id120 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("برياني + فخذة دجاج", "2 مغرفة أرز", 350, 15, 20, 20, 0, 0, 0, id120, foodType);
+                success120 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img120_1 = convertDrawableToByteArray(R.drawable.h64_8);
+            FoodModel food120_1 = new FoodModel("برياني + فخذة دجاج", "", img120_1, 170);
+            long id120_1 = foodTableOperations.insertFoodData(food120_1);
+            if (id120_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("برياني + فخذة دجاج", "3مغارف أرز", 450, 25, 25, 25, 0, 0, 0, id120_1, foodType);
+                success120_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img120_2 = convertDrawableToByteArray(R.drawable.h64_9);
+            FoodModel food120_2 = new FoodModel("برياني + فخذة دجاج", "", img120_2, 220);
+            long id120_2 = foodTableOperations.insertFoodData(food120_2);
+            if (id120_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("برياني + فخذة دجاج", "5مغارف أرز", 550, 80, 60, 30, 0, 0, 0, id120_2, foodType);
+                success120_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img121 = convertDrawableToByteArray(R.drawable.h65_1);
+            FoodModel food121 = new FoodModel("فول و لبن", "", img121, 230);
+            long id121 = foodTableOperations.insertFoodData(food121);
+            if (id121 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن", "2 مغرفة أرز+نصف كوب يخنة", 250, 25, 6, 15, 0, 0, 0, id121, foodType);
+                success121 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img121_1 = convertDrawableToByteArray(R.drawable.h65_2);
+            FoodModel food121_1 = new FoodModel("فول و لبن", "", img121_1, 270);
+            long id121_1 = foodTableOperations.insertFoodData(food121_1);
+            if (id121_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن", "3مغارف ارز+نصف كوب يخنة", 350, 30, 7, 15, 0, 0, 0, id121_1, foodType);
+                success121_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img121_2 = convertDrawableToByteArray(R.drawable.h65_3);
+            FoodModel food121_2 = new FoodModel("فول و لبن", "", img121_2, 320);
+            long id121_2 = foodTableOperations.insertFoodData(food121_2);
+            if (id121_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن", "5 مغارف ارز+كوب يخنة", 500, 50, 15, 25, 0, 0, 0, id121_2, foodType);
+                success121_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img122 = convertDrawableToByteArray(R.drawable.h65_4);
+            FoodModel food122 = new FoodModel("فول و لبن+صدر دجاج", "", img122, 300);
+            long id122 = foodTableOperations.insertFoodData(food122);
+            if (id122 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن+صدر دجاج", "2 مغرفة أرز+نصف كوب يخنة", 400, 25, 35, 30, 0, 0, 0, id122, foodType);
+                success122 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img122_1 = convertDrawableToByteArray(R.drawable.h65_5);
+            FoodModel food122_1 = new FoodModel("فول و لبن+صدر دجاج", "", img122_1, 350);
+            long id122_1 = foodTableOperations.insertFoodData(food122_1);
+            if (id122_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن+صدر دجاج", "3مغارف ارز+نصف كوب يخنة", 550, 30, 35, 30, 0, 0, 0, id122_1, foodType);
+                success122_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img122_2 = convertDrawableToByteArray(R.drawable.h65_6);
+            FoodModel food122_2 = new FoodModel("فول و لبن+صدر دجاج", "", img122_2, 400);
+            long id122_2 = foodTableOperations.insertFoodData(food122_2);
+            if (id122_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن+صدر دجاج", "5 مغارف ارز+كوب يخنة", 750, 50, 40, 40, 0, 0, 0, id122_2, foodType);
+                success122_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img123 = convertDrawableToByteArray(R.drawable.h65_7);
+            FoodModel food123 = new FoodModel("فول و لبن+فخذة دجاج", "", img123, 300);
+            long id123 = foodTableOperations.insertFoodData(food123);
+            if (id123 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن+فخذة دجاج", "2 مغرفة أرز+نصف كوب يخنة", 500, 25, 30, 30, 0, 0, 0, id123, foodType);
+                success123 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img123_1 = convertDrawableToByteArray(R.drawable.h65_8);
+            FoodModel food123_1 = new FoodModel("فول و لبن+فخذة دجاج", "", img123_1, 350);
+            long id123_1 = foodTableOperations.insertFoodData(food123_1);
+            if (id123_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن+فخذة دجاج", "3مغارف ارز+نصف كوب يخنة", 560, 30, 30, 30, 0, 0, 0, id123_1, foodType);
+                success123_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img123_2 = convertDrawableToByteArray(R.drawable.h65_9);
+            FoodModel food123_2 = new FoodModel("فول و لبن+فخذة دجاج", "", img123_2, 400);
+            long id123_2 = foodTableOperations.insertFoodData(food123_2);
+            if (id123_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن+فخذة دجاج", "5 مغارف ارز+كوب يخنة", 780, 50, 35, 40, 0, 0, 0, id123_2, foodType);
+                success123_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img124 = convertDrawableToByteArray(R.drawable.h65_10);
+            FoodModel food124 = new FoodModel("فول و لبن+قطعة لحمة", "", img124, 300);
+            long id124 = foodTableOperations.insertFoodData(food124);
+            if (id124 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن+قطعة لحمة", "2 مغرفة أرز+نصف كوب يخنة", 400, 25, 20, 25, 0, 0, 0, id124, foodType);
+                success124 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img124_1 = convertDrawableToByteArray(R.drawable.h65_11);
+            FoodModel food124_1 = new FoodModel("فول و لبن+قطعة لحمة", "", img124_1, 350);
+            long id124_1 = foodTableOperations.insertFoodData(food124_1);
+            if (id124_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن+قطعة لحمة", "3مغارف ارز+نصف كوب يخنة", 470, 30, 20, 30, 0, 0, 0, id124_1, foodType);
+                success124_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img124_2 = convertDrawableToByteArray(R.drawable.h65_12);
+            FoodModel food124_2 = new FoodModel("فول و لبن+قطعة لحمة", "", img124_2, 400);
+            long id124_2 = foodTableOperations.insertFoodData(food124_2);
+            if (id124_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("فول و لبن+قطعة لحمة", "5 مغارف ارز+كوب يخنة", 680, 50, 30, 35, 0, 0, 0, id124_2, foodType);
+                success124_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img125 = convertDrawableToByteArray(R.drawable.h66_1);
+            FoodModel food125 = new FoodModel("ششبرك", "", img125, 220);
+            long id125 = foodTableOperations.insertFoodData(food125);
+            if (id125 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك", "2 مغرفة أرز+نصف كوب يخنة", 350, 35, 10, 20, 0, 0, 0, id125, foodType);
+                success125 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img125_1 = convertDrawableToByteArray(R.drawable.h66_2);
+            FoodModel food125_1 = new FoodModel("ششبرك", "", img125_1, 260);
+            long id125_1 = foodTableOperations.insertFoodData(food125_1);
+            if (id125_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك", "3مغارف ارز+نصف كوب يخنة", 400, 40, 10, 20, 0, 0, 0, id125_1, foodType);
+                success125_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img125_2 = convertDrawableToByteArray(R.drawable.h66_3);
+            FoodModel food125_2 = new FoodModel("ششبرك", "", img125_2, 480);
+            long id125_2 = foodTableOperations.insertFoodData(food125_2);
+            if (id125_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك", "5 مغارف ارز+كوب يخنة", 700, 80, 20, 35, 0, 0, 0, id125_2, foodType);
+                success125_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img126 = convertDrawableToByteArray(R.drawable.h66_4);
+            FoodModel food126 = new FoodModel("ششبرك + صدر دجاج", "", img126, 300);
+            long id126 = foodTableOperations.insertFoodData(food126);
+            if (id126 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك + صدر دجاج", "2 مغرفة أرز+نصف كوب يخنة", 500, 35, 25, 30, 0, 0, 0, id126, foodType);
+                success126 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img126_1 = convertDrawableToByteArray(R.drawable.h66_5);
+            FoodModel food126_1 = new FoodModel("ششبرك + صدر دجاج", "", img126_1, 340);
+            long id126_1 = foodTableOperations.insertFoodData(food126_1);
+            if (id126_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك + صدر دجاج", "3مغارف ارز+نصف كوب يخنة", 560, 45, 25, 30, 0, 0, 0, id126_1, foodType);
+                success126_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img126_2 = convertDrawableToByteArray(R.drawable.h66_6);
+            FoodModel food126_2 = new FoodModel("ششبرك + صدر دجاج", "", img126_2, 560);
+            long id126_2 = foodTableOperations.insertFoodData(food126_2);
+            if (id126_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك + صدر دجاج", "5 مغارف ارز+كوب يخنة", 860, 80, 35, 50, 0, 0, 0, id126_2, foodType);
+                success126_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img127 = convertDrawableToByteArray(R.drawable.h66_7);
+            FoodModel food127 = new FoodModel("ششبرك + فخذة دجاج", "", img127, 300);
+            long id127 = foodTableOperations.insertFoodData(food127);
+            if (id127 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك + فخذة دجاج", "2 مغرفة أرز+نصف كوب يخنة", 600, 35, 30, 35, 0, 0, 0, id127, foodType);
+                success127 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img127_1 = convertDrawableToByteArray(R.drawable.h66_8);
+            FoodModel food127_1 = new FoodModel("ششبرك + فخذة دجاج", "", img127_1, 340);
+            long id127_1 = foodTableOperations.insertFoodData(food127_1);
+            if (id127_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك + فخذة دجاج", "3مغارف ارز+نصف كوب يخنة", 650, 40, 30, 40, 0, 0, 0, id127_1, foodType);
+                success127_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img127_2 = convertDrawableToByteArray(R.drawable.h66_9);
+            FoodModel food127_2 = new FoodModel("ششبرك + فخذة دجاج", "", img127_2, 560);
+            long id127_2 = foodTableOperations.insertFoodData(food127_2);
+            if (id127_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك + فخذة دجاج", "5 مغارف ارز+كوب يخنة", 960, 80, 40, 50, 0, 0, 0, id127_2, foodType);
+                success127_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img128 = convertDrawableToByteArray(R.drawable.h66_10);
+            FoodModel food128 = new FoodModel("ششبرك + قطعة لحمة", "", img128, 300);
+            long id128 = foodTableOperations.insertFoodData(food128);
+            if (id128 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك + قطعة لحمة", "2 مغرفة أرز+نصف كوب يخنة", 580, 35, 40, 35, 0, 0, 0, id128, foodType);
+                success128 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img128_1 = convertDrawableToByteArray(R.drawable.h66_11);
+            FoodModel food128_1 = new FoodModel("ششبرك + قطعة لحمة", "", img128_1, 340);
+            long id128_1 = foodTableOperations.insertFoodData(food128_1);
+            if (id128_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك + قطعة لحمة", "3مغارف ارز+نصف كوب يخنة", 650, 45, 40, 35, 0, 0, 0, id128_1, foodType);
+                success128_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img128_2 = convertDrawableToByteArray(R.drawable.h66_12);
+            FoodModel food128_2 = new FoodModel("ششبرك + قطعة لحمة", "", img128_2, 560);
+            long id128_2 = foodTableOperations.insertFoodData(food128_2);
+            if (id128_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("ششبرك + قطعة لحمة", "5 مغارف ارز+كوب يخنة", 950, 80, 50, 15, 0, 0, 0, id128_2, foodType);
+                success128_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img129 = convertDrawableToByteArray(R.drawable.h67_1);
+            FoodModel food129 = new FoodModel("مخشي الكوسا", "", img129, 260);
+            long id129 = foodTableOperations.insertFoodData(food129);
+            if (id129 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مخشي الكوسا", "2 مغرفة أرز+نصف كوب يخنة", 500, 25, 35, 35, 0, 0, 0, id129, foodType);
+                success129 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img129_1 = convertDrawableToByteArray(R.drawable.h67_2);
+            FoodModel food129_1 = new FoodModel("مخشي الكوسا", "", img129_1, 300);
+            long id129_1 = foodTableOperations.insertFoodData(food129_1);
+            if (id129_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مخشي الكوسا", "3مغارف ارز+نصف كوب يخنة", 600, 30, 35, 35, 0, 0, 0, id129_1, foodType);
+                success129_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img129_2 = convertDrawableToByteArray(R.drawable.h67_3);
+            FoodModel food129_2 = new FoodModel("مخشي الكوسا", "", img129_2, 530);
+            long id129_2 = foodTableOperations.insertFoodData(food129_2);
+            if (id129_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مخشي الكوسا", "5 مغارف ارز+كوب يخنة", 880, 50, 45, 50, 0, 0, 0, id129_2, foodType);
+                success129_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img130 = convertDrawableToByteArray(R.drawable.h68);
+            FoodModel food130 = new FoodModel("مخشي بطاطا", "", img130, 70);
+            long id130 = foodTableOperations.insertFoodData(food130);
+            if (id130 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مخشي بطاطا", "صغير", 100, 8, 5, 3, 0, 0, 0, id130, foodType);
+                success130 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            FoodModel food130_1 = new FoodModel("مخشي بطاطا", "", 90);
+            long id130_1 = foodTableOperations.insertFoodData(food130_1);
+            if (id130_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مخشي بطاطا", "وسط", 150, 10, 7, 6, 0, 0, 0, id130_1, foodType);
+                success130_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            FoodModel food130_2 = new FoodModel("مخشي بطاطا", "", 110);
+            long id130_2 = foodTableOperations.insertFoodData(food130_2);
+            if (id130_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مخشي بطاطا", "كبير", 200, 12, 10, 12, 0, 0, 0, id130_2, foodType);
+                success130_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img131 = convertDrawableToByteArray(R.drawable.h69);
+            FoodModel food131 = new FoodModel("رقبة خروف محشية بالارزا", "", img131, 520);
+            long id131 = foodTableOperations.insertFoodData(food131);
+            if (id131 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("رقبة خروف محشية بالارز", "", 150, 30, 100, 90, 0, 0, 0, id131, foodType);
+                success131 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img132 = convertDrawableToByteArray(R.drawable.h70);
+            FoodModel food132 = new FoodModel("وجبة شاورما", "", img132, 300);
+            long id132 = foodTableOperations.insertFoodData(food132);
+            if (id132 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("وجبة شاورما", "", 580, 80, 25, 10, 0, 0, 0, id132, foodType);
+                success132 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img133 = convertDrawableToByteArray(R.drawable.h71_1);
+            FoodModel food133 = new FoodModel("صينية بطاطا", "", img133, 100);
+            long id133 = foodTableOperations.insertFoodData(food133);
+            if (id133 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية بطاطا", "نصف كوب", 300, 45, 5, 70, 0, 0, 0, id133, foodType);
+                success133 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img133_1 = convertDrawableToByteArray(R.drawable.h71_2);
+            FoodModel food133_1 = new FoodModel("صينية بطاطا", "", img133_1, 180);
+            long id133_1 = foodTableOperations.insertFoodData(food133_1);
+            if (id133_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية بطاطا", "كوب", 500, 90, 10, 14, 0, 0, 0, id133_1, foodType);
+                success133_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img134 = convertDrawableToByteArray(R.drawable.h71_3);
+            FoodModel food134 = new FoodModel("صينية بطاطا + صدر دجاج", "", img134, 180);
+            long id134 = foodTableOperations.insertFoodData(food134);
+            if (id134 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية بطاطا + صدر دجاج", "نصف كوب", 520, 45, 35, 20, 0, 0, 0, id134, foodType);
+                success134 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img134_1 = convertDrawableToByteArray(R.drawable.h71_4);
+            FoodModel food134_1 = new FoodModel("صينية بطاطا + صدر دجاج", "", img134_1, 260);
+            long id134_1 = foodTableOperations.insertFoodData(food134_1);
+            if (id134_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية بطاطا + صدر دجاج", "كوب", 800, 90, 40, 30, 0, 0, 0, id134_1, foodType);
+                success134_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img135 = convertDrawableToByteArray(R.drawable.h71_5);
+            FoodModel food135 = new FoodModel("صينية بطاطا + فخذة دجاج", "", img135, 180);
+            long id135 = foodTableOperations.insertFoodData(food135);
+            if (id135 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية بطاطا + فخذة دجاج", "نصف كوب", 540, 45, 25, 20, 0, 0, 0, id135, foodType);
+                success135 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img135_1 = convertDrawableToByteArray(R.drawable.h71_6);
+            FoodModel food135_1 = new FoodModel("صينية بطاطا + فخذة دجاج", "", img135_1, 260);
+            long id135_1 = foodTableOperations.insertFoodData(food135_1);
+            if (id135_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية بطاطا + فخذة دجاج", "كوب", 800, 90, 30, 30, 0, 0, 0, id135_1, foodType);
+                success135_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img136 = convertDrawableToByteArray(R.drawable.h71_7);
+            FoodModel food136 = new FoodModel("صينية بطاطا + قطعة لحم", "", img136, 200);
+            long id136 = foodTableOperations.insertFoodData(food136);
+            if (id136 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية بطاطا + قطعة لحم", "نصف كوب", 440, 45, 20, 20, 0, 0, 0, id136, foodType);
+                success136 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img136_1 = convertDrawableToByteArray(R.drawable.h71_8);
+            FoodModel food136_1 = new FoodModel("صينية بطاطا + قطعة لحم", "", img136_1, 280);
+            long id136_1 = foodTableOperations.insertFoodData(food136_1);
+            if (id136_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية بطاطا + قطعة لحم", "كوب", 700, 90, 25, 25, 0, 0, 0, id136_1, foodType);
+                success136_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img137 = convertDrawableToByteArray(R.drawable.h72_1);
+            FoodModel food137 = new FoodModel("صينية كفتة بطحينية", "", img137, 150);
+            long id137 = foodTableOperations.insertFoodData(food137);
+            if (id137 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية كفتة بطحينية", "2 من مغرفة ارز", 250, 7, 10, 15, 0, 0, 0, id137, foodType);
+                success137 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img137_1 = convertDrawableToByteArray(R.drawable.h72_2);
+            FoodModel food137_1 = new FoodModel("صينية كفتة بطحينية", "", img137_1, 260);
+            long id137_1 = foodTableOperations.insertFoodData(food137_1);
+            if (id137_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية كفتة بطحينية", "3 من مغارف ارز", 400, 10, 20, 30, 0, 0, 0, id137_1, foodType);
+                success137_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img137_2 = convertDrawableToByteArray(R.drawable.h72_3);
+            FoodModel food137_2 = new FoodModel("صينية كفتة بطحينية", "", img137_2, 380);
+            long id137_2 = foodTableOperations.insertFoodData(food137_2);
+            if (id137_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية كفتة بطحينية", "5 من مغارف ارز", 700, 15, 30, 60, 0, 0, 0, id137_2, foodType);
+                success137_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img138 = convertDrawableToByteArray(R.drawable.h74);
+            FoodModel food138 = new FoodModel("صينية افخاذ الحبش مع خضار", "", img138, 150);
+            long id138 = foodTableOperations.insertFoodData(food138);
+            if (id138 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("صينية افخاذ الحبش مع خضار", "كوب", 130, 12, 30, 30, 0, 0, 0, id138, foodType);
+                success138 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img139 = convertDrawableToByteArray(R.drawable.h75_1);
+            FoodModel food139 = new FoodModel("منسف فريكة", "", img139, 60);
+            long id139 = foodTableOperations.insertFoodData(food139);
+            if (id139 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف فريكة", "2 من مغرفة الارز", 100, 15, 1.5, 3, 0, 0, 0, id139, foodType);
+                success139 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img139_1 = convertDrawableToByteArray(R.drawable.h75_2);
+            FoodModel food139_1 = new FoodModel("منسف فريكة", "", img139_1, 100);
+            long id139_1 = foodTableOperations.insertFoodData(food139_1);
+            if (id139_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف فريكة", "3 من مغرفة الارز", 160, 30, 3, 3.5, 0, 0, 0, id139_1, foodType);
+                success139_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img139_2 = convertDrawableToByteArray(R.drawable.h75_3);
+            FoodModel food139_2 = new FoodModel("منسف فريكة", "", img139_2, 170);
+            long id139_2 = foodTableOperations.insertFoodData(food139_2);
+            if (id139_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف فريكة", "5 من مغارف الارز", 280, 45, 4, 6, 0, 0, 0, id139_2, foodType);
+                success139_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img140 = convertDrawableToByteArray(R.drawable.h75_4);
+            FoodModel food140 = new FoodModel("منسف فريكه مع صدر دجاج", "", img140, 140);
+            long id140 = foodTableOperations.insertFoodData(food140);
+            if (id140 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف فريكه مع صدر دجاج", "2 من مغرفة الارز", 330, 15, 30, 15, 0, 0, 0, id140, foodType);
+                success140 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img140_1 = convertDrawableToByteArray(R.drawable.h75_5);
+            FoodModel food140_1 = new FoodModel("منسف فريكه مع صدر دجاج", "", img140_1, 180);
+            long id140_1 = foodTableOperations.insertFoodData(food140_1);
+            if (id140_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف فريكه مع صدر دجاج", "3 من مغرفة الارز", 400, 30, 30, 18, 0, 0, 0, id140_1, foodType);
+                success140_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img140_2 = convertDrawableToByteArray(R.drawable.h75_6);
+            FoodModel food140_2 = new FoodModel("منسف فريكه مع صدر دجاج", "", img140_2, 250);
+            long id140_2 = foodTableOperations.insertFoodData(food140_2);
+            if (id140_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف فريكه مع صدر دجاج", "5 من مغارف الارز", 520, 40, 35, 20, 0, 0, 0, id140_2, foodType);
+                success140_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img141 = convertDrawableToByteArray(R.drawable.h75_7);
+            FoodModel food141 = new FoodModel("منسف فريكه + فخذة دجاج", "", img141, 140);
+            long id141 = foodTableOperations.insertFoodData(food141);
+            if (id141 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف فريكه + فخذة دجاج", "2 من مغرفة الارز", 350, 15, 20, 20, 0, 0, 0, id141, foodType);
+                success141 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img141_1 = convertDrawableToByteArray(R.drawable.h75_8);
+            FoodModel food141_1 = new FoodModel("منسف فريكه + فخذة دجاج", "", img141_1, 180);
+            long id141_1 = foodTableOperations.insertFoodData(food141_1);
+            if (id141_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف فريكه + فخذة دجاج", "3 من مغرفة الارز", 420, 30, 25, 20, 0, 0, 0, id141_1, foodType);
+                success141_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img141_2 = convertDrawableToByteArray(R.drawable.h75_9);
+            FoodModel food141_2 = new FoodModel("منسف فريكه + فخذة دجاج", "", img141_2, 250);
+            long id141_2 = foodTableOperations.insertFoodData(food141_2);
+            if (id141_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("منسف فريكه + فخذة دجاج", "5 من مغارف الارز", 530, 40, 25, 20, 0, 0, 0, id141_2, foodType);
+                success141_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img142 = convertDrawableToByteArray(R.drawable.h76);
+            FoodModel food142 = new FoodModel("كرة دجاج محشية بالارز", "", img142, 250);
+            long id142 = foodTableOperations.insertFoodData(food142);
+            if (id142 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("كرة دجاج محشية بالارز", "", 520, 30, 25, 25, 0, 0, 0, id142, foodType);
+                success142 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img143 = convertDrawableToByteArray(R.drawable.h77_1);
+            FoodModel food143 = new FoodModel("حوس كوسا مع خضار", "", img143, 130);
+            long id143 = foodTableOperations.insertFoodData(food143);
+            if (id143 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("حوس كوسا مع خضار", "نصف كوب", 200, 2.1, 1, 20, 0, 0, 0, id143, foodType);
+                success143 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img143_1 = convertDrawableToByteArray(R.drawable.h77_2);
+            FoodModel food143_1 = new FoodModel("حوس كوسا مع خضار", "", img143_1, 270);
+            long id143_1 = foodTableOperations.insertFoodData(food143_1);
+            if (id143_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("حوس كوسا مع خضار", " كوب", 380, 5, 2, 40, 0, 0, 0, id143_1, foodType);
+                success143_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img144 = convertDrawableToByteArray(R.drawable.h78_1);
+            FoodModel food144 = new FoodModel("حوس يقطين مع خضار", "", img144, 130);
+            long id144 = foodTableOperations.insertFoodData(food144);
+            if (id144 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("حوس يقطين مع خضار", "نصف كوب", 140, 2.5, 1, 15, 0, 0, 0, id144, foodType);
+                success144 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img144_1 = convertDrawableToByteArray(R.drawable.h78_2);
+            FoodModel food144_1 = new FoodModel("حوس يقطين مع خضار", "", img144_1, 220);
+            long id144_1 = foodTableOperations.insertFoodData(food144_1);
+            if (id144_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("حوس يقطين مع خضار", "كوب", 280, 5, 2, 30, 0, 0, 0, id144_1, foodType);
+                success144_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img145 = convertDrawableToByteArray(R.drawable.h80_1);
+            FoodModel food145 = new FoodModel("مفتول", "", img145, 100);
+            long id145 = foodTableOperations.insertFoodData(food145);
+            if (id145 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مفتول", "2 من مغرفة ارز", 150, 25, 2.5, 3, 0, 0, 0, id145, foodType);
+                success145 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img145_1 = convertDrawableToByteArray(R.drawable.h80_2);
+            FoodModel food145_1 = new FoodModel("مفتول", "", img145_1, 160);
+            long id145_1 = foodTableOperations.insertFoodData(food145_1);
+            if (id145_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مفتول", "3 من مغارف ارز", 250, 40, 4, 6, 0, 0, 0, id145_1, foodType);
+                success145_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img145_2 = convertDrawableToByteArray(R.drawable.h80_3);
+            FoodModel food145_2 = new FoodModel("مفتول", "", img145_2, 260);
+            long id145_2 = foodTableOperations.insertFoodData(food145_2);
+            if (id145_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مفتول", "5 من مغرفة ارز", 420, 70, 7, 9, 0, 0, 0, id145_2, foodType);
+                success145_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img146 = convertDrawableToByteArray(R.drawable.h80_4);
+            FoodModel food146 = new FoodModel("مفتول +صدر دجاج", "", img146, 180);
+            long id146 = foodTableOperations.insertFoodData(food146);
+            if (id146 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مفتول +صدر دجاج", "2 من مغرفة ارز", 400, 25, 30, 15, 0, 0, 0, id146, foodType);
+                success146 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img146_1 = convertDrawableToByteArray(R.drawable.h80_5);
+            FoodModel food146_1 = new FoodModel("مفتول +صدر دجاج", "", img146_1, 240);
+            long id146_1 = foodTableOperations.insertFoodData(food146_1);
+            if (id146_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مفتول +صدر دجاج", "3 من مغارف ارز", 500, 40, 35, 20, 0, 0, 0, id146_1, foodType);
+                success146_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img146_2 = convertDrawableToByteArray(R.drawable.h80_6);
+            FoodModel food146_2 = new FoodModel("مفتول +صدر دجاج", "", img146_2, 340);
+            long id146_2 = foodTableOperations.insertFoodData(food146_2);
+            if (id146_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مفتول +صدر دجاج", "5 من مغرفة ارز", 650, 70, 7, 25, 0, 0, 0, id146_2, foodType);
+                success146_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img147 = convertDrawableToByteArray(R.drawable.h80_7);
+            FoodModel food147 = new FoodModel("مفتول +فخذة دجاج", "", img147, 180);
+            long id147 = foodTableOperations.insertFoodData(food147);
+            if (id147 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مفتول +فخذة دجاج", "2 من مغرفة ارز", 400, 25, 24, 20, 0, 0, 0, id147, foodType);
+                success147 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img147_1 = convertDrawableToByteArray(R.drawable.h80_8);
+            FoodModel food147_1 = new FoodModel("مفتول +فخذة دجاج", "", img147_1, 240);
+            long id147_1 = foodTableOperations.insertFoodData(food147_1);
+            if (id147_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مفتول +فخذة دجاج", "3 من مغارف ارز", 520, 40, 25, 20, 0, 0, 0, id147_1, foodType);
+                success147_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img147_2 = convertDrawableToByteArray(R.drawable.h80_9);
+            FoodModel food147_2 = new FoodModel("مفتول +فخذة دجاج", "", img147_2, 340);
+            long id147_2 = foodTableOperations.insertFoodData(food147_2);
+            if (id147_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مفتول +فخذة دجاج", "5 من مغرفة ارز", 670, 70, 7, 25, 0, 0, 0, id147_2, foodType);
+                success147_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img148 = convertDrawableToByteArray(R.drawable.h81_1);
+            FoodModel food148 = new FoodModel("خبيزة بالارز", "", img148, 130);
+            long id148 = foodTableOperations.insertFoodData(food148);
+            if (id148 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("خبيزة بالارز", "نصف كوب", 75, 15, 2.5, 0.5, 0, 0, 0, id148, foodType);
+                success148 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img148_1 = convertDrawableToByteArray(R.drawable.h81_2);
+            FoodModel food148_1 = new FoodModel("خبيزة بالارز", "", img148_1, 260);
+            long id148_1 = foodTableOperations.insertFoodData(food148_1);
+            if (id148_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("خبيزة بالارز", "كوب", 150, 30, 5, 1, 0, 0, 0, id148_1, foodType);
+                success148_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img149 = convertDrawableToByteArray(R.drawable.h82_1);
+            FoodModel food149 = new FoodModel("مجدرة أرز", "", img149, 60);
+            long id149 = foodTableOperations.insertFoodData(food149);
+            if (id149 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مجدرة أرز", "2 مغرفة ارز", 150, 10, 5, 4, 0, 0, 0, id149, foodType);
+                success149 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img149_1 = convertDrawableToByteArray(R.drawable.h82_2);
+            FoodModel food149_1 = new FoodModel("مجدرة أرز", "", img149_1, 100);
+            long id149_1 = foodTableOperations.insertFoodData(food149_1);
+            if (id149_1 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مجدرة أرز", "3 مغارف ارز", 200, 20, 7, 8, 0, 0, 0, id149_1, foodType);
+                success149_1 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+            byte[] img149_2 = convertDrawableToByteArray(R.drawable.h82_3);
+            FoodModel food149_2 = new FoodModel("مجدرة أرز", "", img149_2, 170);
+            long id149_2 = foodTableOperations.insertFoodData(food149_2);
+            if (id149_2 > 0) {
+                FoodDetailsModel foodModel12 = new FoodDetailsModel("مجدرة أرز", "5 مغارف ارز", 350, 30, 15, 12, 0, 0, 0, id149_2, foodType);
+                success149_2 = foodDetailsTableOperations.insertFoodData(foodModel12);
+            }
+
+
+            if (success && success_1 && success_2 && success2 && success2_1 && success2_2 && success3 && success3_1 &&
+                    success3_2 && success4 && success4_1 && success4_2 && success5 && success5_1 && success5_2 && success6 &&
+                    success6_1 && success6_2 && success7 && success7_1 && success7_2 && success8 && success8_1 && success9 &&
+                    success9_1 && success9_2 && success10 && success10_1 && success10_2 && success11 && success11_1 &&
+                    success11_2 && success12 && success12_1 && success12_2 && success12_3 && success13 && success13_1 &&
+                    success14 && success15 && success16 && success17 && success17_1 && success17_2 && success18 && success19 &&
+                    success20 && success20_1 && success20_2 && success21 && success21_1 && success21_2 && success21_3 && success22 &&
+                    success23 && success24 && success24_1 && success25 && success25_1 && success26 && success26_1 && success27 &&
+                    success27_1 && success27_2 && success28 && success28_1 && success29 && success29_1 && success30 && success30_1 &&
+                    success30_2 && success31 && success31_1 && success31_2 && success32 && success32_1 && success32_2 && success33 &&
+                    success33_1 && success33_2 && success34 && success34_1 && success34_2 && success35 && success35_1 && success35_2 &&
+                    success36 && success36_1 && success36_2 && success37 && success37_1 && success37_2 && success38 && success39 &&
+                    success40 && success40_1 && success40_2 && success41 && success41_1 && success41_2 && success42 && success42_1 &&
+                    success42_2 && success43 && success43_1 && success43_2 && success44 && success44_1 && success45 && success45_1 &&
+                    success45_2 && success46 && success46_1 && success46_2 && success47 && success47_1 && success47_2 && success48 &&
+                    success48_1 && success49 && success49_1 && success50 && success50_1 && success51 && success52 && success52_1 &&
+                    success52_2 && success53 && success53_1 && success53_2 && success54 && success54_1 && success54_2 && success55 &&
+                    success55_1 && success56 && success56_1 && success56_2 && success57 && success57_1 && success57_2 && success58 &&
+                    success58_1 && success58_2 && success59 && success59_1 && success59_2 && success60 && success60_1 && success60_2 &&
+                    success61 && success61_1 && success61_2 && success62 && success62_1 && success62_2 && success63 && success63_1 &&
+                    success63_2 && success64 && success64_1 && success64_2 && success65 && success65_1 && success65_2 && success66 &&
+                    success66_1 && success66_2 && success67 && success67_1 && success67_2 && success68 && success68_1 && success68_2 &&
+                    success69 && success69_1 && success69_2 && success70 && success70_1 && success70_2 && success71 && success71_1 &&
+                    success71_2 && success72 && success72_1 && success73 && success73_1 && success74 && success74_1 && success75 &&
+                    success76 && success77 && success78 && success79 && success80 && success81 && success82 && success82_1 &&
+                    success83 && success84 && success85 && success85_1 && success86 && success86_1 && success87 && success87_1 &&
+                    success87_2 && success88 && success88_1 && success88_2 && success89 && success89_1 && success89_2 && success90 &&
+                    success90_1 && success90_2 && success91 && success92 && success93 && success94 && success94_1 && success94_2 &&
+                    success95 && success95_1 && success95_2 && success96 && success96_1 && success96_2 && success97 && success97_1 &&
+                    success97_2 && success98 && success98_1 && success98_2 && success99 && success99_1 && success99_2 && success100 &&
+                    success100_1 && success100_2 && success101 && success101_1 && success101_2 && success102 && success102_1 && success102_2 &&
+                    success103 && success103_1 && success103_2 && success104 && success104_1 && success104_2 && success105 && success105_1 &&
+                    success105_2 && success106 && success106_1 && success106_2 && success107 && success107_1 && success107_2 && success108 &&
+                    success108_1 && success108_2 && success109 && success109_1 && success109_2 && success110 && success110_1 && success110_2 &&
+                    success111 && success111_1 && success111_2 && success112 && success112_1 && success112_2 && success113 && success113_1 &&
+                    success113_2 && success114 && success114_1 && success114_2 && success115 && success115_1 && success115_2 && success116 &&
+                    success116_1 && success116_2 && success117 && success117_1 && success117_2 && success118 && success118_1 && success118_2 &&
+                    success119 && success119_1 && success119_2 && success120 && success120_1 && success120_2 && success121 && success121_1 &&
+                    success121_2 && success122 && success122_1 && success122_2 && success123 && success123_1 && success123_2 && success124 &&
+                    success124_1 && success124_2 && success125 && success125_1 && success125_2 && success126 && success126_1 && success126_2 &&
+                    success127 && success127_1 && success127_2 && success128 && success128_1 && success128_2 && success129 && success129_1 &&
+                    success129_2 && success130 && success130_1 && success130_2 && success131 && success132 && success133 && success133_1 &&
+                    success134 && success134_1 && success135 && success135_1 && success136 && success136_1 && success137 && success137_1 &&
+                    success137_2 && success138 && success139 && success139_1 && success139_2 && success140 && success140_1 && success140_2 &&
+                    success141 && success141_1 && success141_2 && success142 && success143 && success143_1 && success144 && success144_1 &&
+                    success145 && success145_1 && success145_2 && success146 && success146_1 && success146_2 && success147 && success147_1 &&
+                    success147_2 && success148 && success148_1 && success149 && success149_1 && success149_2) {
+                return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
+
     // منتجات السوق
     public boolean insertBiscuitsFoodDetails() {
 
