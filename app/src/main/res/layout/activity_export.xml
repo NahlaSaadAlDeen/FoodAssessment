@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".excel.ExportToExcelActivity">
+
+    <!-- <Button
+         android:id="@+id/go_back_btn"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginVertical="10dp"
+         android:background="#0069FF"
+         android:fontFamily="@font/cairobold"
+         android:text="@string/go_back"
+         android:textColor="#fff"
+         android:textSize="20dp" />-->
+
+    <Button
+        android:id="@+id/write_xlsx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:background="#0069FF"
+        android:fontFamily="@font/cairobold"
+        android:text="@string/write_xlsx"
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+</LinearLayout>
